@@ -29,6 +29,14 @@ void View::drawMap(Board board) {
 
     window.clear();
 
+    sf::CircleShape shape1(40);
+    shape1.setPosition({200, 120});
+    shape1.setFillColor(sf::Color(0xFF, 0x0, 0x0));
+    window.draw(shape1);
+
+    window.display();
+
+    sf::sleep(sf::seconds(5));
     // std::cout << "    ";
     // for (int i = 0; i < mapSize; i++) {
     //     if (i < 10)
