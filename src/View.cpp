@@ -25,7 +25,7 @@ void View::drawMap(Board board) {
     m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
-    sf::RenderWindow window(sf::VideoMode({530, 600}), "Quoridor");
+    sf::RenderWindow window(sf::VideoMode({530, 610}), "Quoridor");
 
     window.clear(sf::Color(0x80, 0x80, 0x0));
 
