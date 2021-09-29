@@ -27,7 +27,7 @@ void View::drawMap(Board board) {
 
     sf::RenderWindow window(sf::VideoMode({530, 530}), "Quoridor");
 
-    window.clear(Color(128, 128, 0));
+    window.clear(sf::Color(0x80, 0x80, 0x0));
 
     for(float i = 0; i < 17; i++){
         for(float j = 0; j < 17; j++){
