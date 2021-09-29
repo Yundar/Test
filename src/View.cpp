@@ -25,22 +25,31 @@ void View::drawMap(Board board) {
     m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
-    sf::RenderWindow window(sf::VideoMode({530, 610}), "Quoridor");
+    sf::RenderWindow window(sf::VideoMode({530, 620}), "Quoridor");
 
-    window.clear(sf::Color(0x80, 0x80, 0x0));
+    while (window.isOpen()){
 
-    for(float i = 0; i < 17; i++){
-        for(float j = 0; j < 17; j++){
-            sf::RectangleShape shape1(sf::Vector2f(50, 50));
-            shape1.setPosition({i * 70, j * 70 + 10});
-            shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
-            window.draw(shape1);
+        Event event;
+        while (window.pollEvent(event)){
+            if (event.type == Event::Closed){
+                window.close();
+            }
         }
+
+        window.clear(sf::Color(0x80, 0x80, 0x0));
+
+        for(float i = 0; i < 17; i++){
+            for(float j = 0; j < 17; j++){
+                sf::RectangleShape shape1(sf::Vector2f(50, 50));
+                shape1.setPosition({i * 70, j * 70 + 10});
+                shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
+                window.draw(shape1);
+            }
+        }
+
+        window.display();
     }
 
-    window.display();
-
-    sf::sleep(sf::seconds(15));
     // std::cout << "    ";
     // for (int i = 0; i < mapSize; i++) {
     //     if (i < 10)
