@@ -29,16 +29,12 @@ void View::drawMap(Board board) {
 
     window.clear();
 
-    for(int i = 0; i < 17; i++){
-        for(int j = 0; j < 17; j++){
-            i = i * 70;
-            j = j * 70;
+    for(float i = 0; i < 17; i++){
+        for(float j = 0; j < 17; j++){
             sf::RectangleShape shape1(sf::Vector2f(50, 50));
-            shape1.setPosition({i, j});
+            shape1.setPosition({i * 70, j * 70});
             shape1.setFillColor(sf::Color(0xFF, 0x0, 0x0));
             window.draw(shape1);
-            i = i / 70;
-            j = j / 70;
         }
     }
 
