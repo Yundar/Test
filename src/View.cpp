@@ -29,10 +29,14 @@ void View::drawMap(Board board) {
 
     window.clear();
 
-    sf::CircleShape shape1(40);
-    shape1.setPosition({200, 120});
-    shape1.setFillColor(sf::Color(0xFF, 0x0, 0x0));
-    window.draw(shape1);
+    for(int i = 0; i < 17; i++){
+        for(int j = 0; j < 17; j++){
+            sf::RectangleShape shape1(sf::Vector2f(50, 50));
+            shape1.setPosition({i*70, j*70});
+            shape1.setFillColor(sf::Color(0xFF, 0x0, 0x0));
+            window.draw(shape1);
+        }
+    }
 
     window.display();
 
