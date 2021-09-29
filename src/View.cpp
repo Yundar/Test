@@ -40,7 +40,7 @@ void View::drawMap(Board board) {
 
     window.display();
 
-    sf::sleep(sf::seconds(5));
+    sf::sleep(sf::seconds(15));
     // std::cout << "    ";
     // for (int i = 0; i < mapSize; i++) {
     //     if (i < 10)
