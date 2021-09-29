@@ -21,6 +21,24 @@ void View::update() {
     drawMap(m_model->getBoard());
 }
 
+
+void View::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+    sf::Color color = sf::Color(200, 100, 200);
+
+    sf::RectangleShape shape(sf::Vector2f(FIELD_SIZE, FIELD_SIZE));
+    shape.setOutlineThickness(2.f);
+    shape.setOutlineColor(color);
+    spahe.setFillColor(sf::Color::Transparent);
+    
+    for (unsigned int i = 0; i < ARRAY_SIZE; i++);{
+        sf::Vector2f position(i % SIZE * CELL_SIZE + 10.f, i / SIZE * CELL_SIZE + 10.f);
+        shape.setPosition(position);
+        target.draw(shape, states);
+    }
+}
+
 void View::drawMap(Board board) {
     int x1, y1, x2, y2;
     m_model->getFirstPlayerPosition(&x1, &y1);  
@@ -35,19 +53,20 @@ void View::drawMap(Board board) {
             if (event.type == sf::Event::Closed){
                 window.close();
             }
+            if (event.type == sf::Event::MouseButtonReleased){}
         }
 
         window.clear(sf::Color(0x80, 0x80, 0x0));
 
-        for(float i = 0; i < 17; i++){
-            for(float j = 0; j < 17; j++){
-                sf::RectangleShape shape1(sf::Vector2f(50, 50));
-                shape1.setPosition({i * 70, j * 70 + 10});
-                shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
-                window.draw(shape1);
-            }
-        }
-
+        // for(float i = 0; i < 17; i++){
+        //     for(float j = 0; j < 17; j++){
+        //         sf::RectangleShape shape1(sf::Vector2f(50, 50));
+        //         shape1.setPosition({i * 70, j * 70 + 10});
+        //         shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
+        //         window.draw(shape1);
+        //     }
+        // }
+        window.draw(Game);
         window.display();
     }
 
