@@ -3,6 +3,8 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+using namespace sf;
+
 View::View(Game *model) {
     m_model = model;
     m_model->addObserver(this);
@@ -25,7 +27,7 @@ void View::drawMap(Board board) {
     m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
-    sf::RenderWindow window(sf::VideoMode({530, 620}), "Quoridor");
+    RenderWindow window(VideoMode({530, 620}), "Quoridor");
 
     while (window.isOpen()){
 
@@ -40,9 +42,9 @@ void View::drawMap(Board board) {
 
         for(float i = 0; i < 17; i++){
             for(float j = 0; j < 17; j++){
-                sf::RectangleShape shape1(sf::Vector2f(50, 50));
+                RectangleShape shape1(Vector2f(50, 50));
                 shape1.setPosition({i * 70, j * 70 + 10});
-                shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
+                shape1.setFillColor(Color(0x80, 0x0, 0x0));
                 window.draw(shape1);
             }
         }
