@@ -22,17 +22,17 @@ void View::update() {
 
 void View::drawMap(Board board) {
     int x1, y1, x2, y2;
-    m_model->getFirstPlayerPosition(&x1, &y1);
+    m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
-    sf::RenderWindow window(sf::VideoMode({530, 530}), "Quoridor");
+    sf::RenderWindow window(sf::VideoMode({530, 600}), "Quoridor");
 
     window.clear(sf::Color(0x80, 0x80, 0x0));
 
     for(float i = 0; i < 17; i++){
         for(float j = 0; j < 17; j++){
             sf::RectangleShape shape1(sf::Vector2f(50, 50));
-            shape1.setPosition({i * 70, j * 70 + 10});
+            shape1.setPosition({i * 70 + 20, j * 70 + 10});
             shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
             window.draw(shape1);
         }
