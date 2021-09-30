@@ -50,7 +50,7 @@ void View::drawMap(Board board) {
 
     // sf::String TileMap[] = 
 
-    sf::RenderWindow window(sf::VideoMode({610, 610}), "Quoridor");
+    sf::RenderWindow window(sf::VideoMode({500, 500}), "Quoridor");
 
     while (window.isOpen()){
 
@@ -69,11 +69,11 @@ void View::drawMap(Board board) {
                 switch (board.getTile(i,j))
                 {
                 case 0:
-                    mSprite.setTextureRect(sf::IntRect(0, 0, 20, 20));
+                    mSprite.setTextureRect(sf::IntRect(50, 0, 20, 20));
                     break;
                 
                 case 1:
-                    mSprite.setTextureRect(sf::IntRect(50, 0, 50, 50));
+                    mSprite.setTextureRect(sf::IntRect(0, 0, 50, 50));
                     break;
                 }
                 // sf::RectangleShape shape1(sf::Vector2f(50, 50));
