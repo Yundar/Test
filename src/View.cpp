@@ -84,7 +84,6 @@ void View::drawMap(Board board) {
                 window.draw(shape1);
             }
         }
-        window.draw(Game);
         window.display();
     }
 
