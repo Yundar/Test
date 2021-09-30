@@ -44,7 +44,7 @@ void View::update() {
 // }
 
 void View::drawMap(Board board) {
-    float x1, y1, x2, y2;
+    int x1, y1, x2, y2;
     m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
@@ -64,8 +64,8 @@ void View::drawMap(Board board) {
 
         window.clear(sf::Color(0x80, 0x80, 0x0));
 
-        for(float i = 0; i < ARRAY_SIZE; i++){
-            for(float j = 0; j < ARRAY_SIZE; j++){
+        for(int i = 0; i < ARRAY_SIZE; i++){
+            for(int j = 0; j < ARRAY_SIZE; j++){
                 switch (board.getTile(i,j))
                 {
                 case 1:
@@ -81,15 +81,15 @@ void View::drawMap(Board board) {
             }
         }
 
-        sf::RectangleShape player1(sf::Vector2f(30, 30));
-        player1.setPosition({x1 * 30, y1 * 30});
-        player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
-        window.draw(player1);
+        // sf::RectangleShape player1(sf::Vector2f(30, 30));
+        // player1.setPosition({x1 * 30, y1 * 30});
+        // player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
+        // window.draw(player1);
 
-        sf::RectangleShape player2(sf::Vector2f(30, 30));
-        player2.setPosition({x2 * 30, y2 * 30});
-        player2.setFillColor(sf::Color(0x0, 0x0, 0xFF));
-        window.draw(player2);
+        // sf::RectangleShape player2(sf::Vector2f(30, 30));
+        // player2.setPosition({x2 * 30, y2 * 30});
+        // player2.setFillColor(sf::Color(0x0, 0x0, 0xFF));
+        // window.draw(player2);
 
         window.display();
     }
