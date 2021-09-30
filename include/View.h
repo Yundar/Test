@@ -3,6 +3,9 @@
 
 #include "Game.h"
 #include "Observer.h"
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 const int SIZE = 9;
 const int FIELD_SIZE = 530;
