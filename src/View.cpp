@@ -143,5 +143,3 @@ void View::drawMap(Board board) {
     // std::cout << std::endl;
     // std::cout << std::endl;
 }
-
-void View::drawPlayers(Board board)
