@@ -44,7 +44,7 @@ void View::update() {
 // }
 
 void View::drawMap(Board board) {
-    int x1, y1, x2, y2;
+    float x1, y1, x2, y2;
     m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
