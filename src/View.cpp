@@ -62,22 +62,22 @@ void View::drawMap(Board board) {
 
         for(float i = 0; i < ARRAY_SIZE; i++){
             for(float j = 0; j < ARRAY_SIZE; j++){
-                switch (board.getTile(i,j))
-                {
-                case 0:
-                    sf::RectangleShape shape1(sf::Vector2f(50, 50));
-                    shape1.setPosition({i * 70, j * 70});
-                    shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
-                    window.draw(shape1);
-                    break;
+                // switch (board.getTile(i,j))
+                // {
+                // case 0:
+                //     sf::RectangleShape shape1(sf::Vector2f(50, 50));
+                //     shape1.setPosition({i * 70, j * 70});
+                //     shape1.setFillColor(sf::Color(0x0, 0x0, 0x0));
+                //     window.draw(shape1);
+                //     break;
                 
-                case 1:
-                    sf::RectangleShape shape1(sf::Vector2f(50, 50));
-                    shape1.setPosition({i * 70, j * 70});
-                    shape1.setFillColor(sf::Color(0x0, 0x0, 0x0));
-                    window.draw(shape1);
-                    break;
-                }
+                // case 1:
+                //     sf::RectangleShape shape1(sf::Vector2f(50, 50));
+                //     shape1.setPosition({i * 70, j * 70});
+                //     shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
+                //     window.draw(shape1);
+                //     break;
+                // }
                 sf::RectangleShape shape1(sf::Vector2f(50, 50));
                 shape1.setPosition({i * 70, j * 70});
                 shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
