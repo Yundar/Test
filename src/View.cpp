@@ -50,7 +50,7 @@ void View::drawMap(Board board) {
 
     // sf::String TileMap[] = 
 
-    sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
+    sf::RenderWindow window(sf::VideoMode({510, 600}), "Quoridor");
 
     while (window.isOpen()){
 
