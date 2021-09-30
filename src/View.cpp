@@ -81,15 +81,15 @@ void View::drawMap(Board board) {
             }
         }
 
-        // sf::RectangleShape player1(sf::Vector2f(30, 30));
-        // player1.setPosition({x1 * 30, y1 * 30});
-        // player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
-        // window.draw(player1);
+        sf::RectangleShape player1(sf::Vector2i(30, 30));
+        player1.setPosition({x1 * 30, y1 * 30});
+        player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
+        window.draw(player1);
 
-        // sf::RectangleShape player2(sf::Vector2f(30, 30));
-        // player2.setPosition({x2 * 30, y2 * 30});
-        // player2.setFillColor(sf::Color(0x0, 0x0, 0xFF));
-        // window.draw(player2);
+        sf::RectangleShape player2(sf::Vector2i(30, 30));
+        player2.setPosition({x2 * 30, y2 * 30});
+        player2.setFillColor(sf::Color(0x0, 0x0, 0xFF));
+        window.draw(player2);
 
         window.display();
     }
