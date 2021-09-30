@@ -50,7 +50,7 @@ void View::drawMap(Board board) {
 
     // sf::String TileMap[] = 
 
-    sf::RenderWindow window(sf::VideoMode({510, 600}), "Quoridor");
+    sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
 
     while (window.isOpen()){
 
@@ -76,14 +76,21 @@ void View::drawMap(Board board) {
                     mSprite.setTextureRect(sf::IntRect(0, 0, 30, 30));
                     break;
                 }
-                // sf::RectangleShape shape1(sf::Vector2f(50, 50));
-                // shape1.setPosition({i * 70, j * 70});
-                // shape1.setFillColor(sf::Color(0x80, 0x0, 0x0));
-                // window.draw(shape1);
                 mSprite.setPosition(j * 30, i * 30);
                 window.draw(mSprite);
             }
         }
+
+        sf::RectangleShape player1(sf::Vector2f(30, 30));
+        player1.setPosition({x1 * 30, y1 * 30});
+        player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
+        window.draw(player1);
+
+        sf::RectangleShape player2(sf::Vector2f(30, 30));
+        player2.setPosition({x2 * 30, y2 * 30});
+        player2.setFillColor(sf::Color(0x0, 0x0, 0xFF));
+        window.draw(player2);
+
         window.display();
     }
 
@@ -136,3 +143,5 @@ void View::drawMap(Board board) {
     // std::cout << std::endl;
     // std::cout << std::endl;
 }
+
+void View::drawPlayers(Board board)
