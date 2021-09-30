@@ -7,7 +7,7 @@
 const int SIZE = 9;
 const int FIELD_SIZE = 530;
 const int CELL_SIZE = 50;
-const int ARRAY_SIZE = 17;
+const int ARRAY_SIZE = 18;
 
 class View : public Observer {
 private:
