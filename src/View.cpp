@@ -46,8 +46,6 @@ void View::drawMap(Board board) {
     m_model->getSecondPlayerPosition(&x2, &y2);
     m_model->getCurrentPlayerPosition(&x, &y);
 
-    std::vector<std::pair<int,int>> moves;
-
     for(int i = 0; i < ARRAY_SIZE; i++){
             for(int j = 0; j < ARRAY_SIZE; j++){
                 switch (board.getTile(i,j))

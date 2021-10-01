@@ -27,6 +27,8 @@ private:
 
     sf::Texture wTexture;
     sf::Sprite wSprite;
+
+    std::vector<std::pair<int,int>> moves;
 public:
     View(Game *model);
     ~View() = default;

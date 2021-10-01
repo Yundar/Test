@@ -24,37 +24,39 @@ void Controller::start() {
                     m_model->getCurrentPlayerPosition(&x, &y);
 
                     sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-
-                    if (event.type == sf::Event::Closed){
-                        window.close();
-                    }
-                    if (event.type == sf::Event::MouseButtonPressed){
-                        if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
-                            m_view->drawPossibleMoves();
+                    sf::Event event;
+                    while(window.pollEvent(event)){
+                        if (event.type == sf::Event::Closed){
+                            window.close();
                         }
-                        for (unsigned int i = 0; i < moves.size(); i++){
-                            if (sf::IntRect(m_model->getPossibleMoves()[i].first * CELL_SIZE, m_model->getPossibleMoves()[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
-                                m_model->makeTurn(m_model->getPossibleMoves()[i].first, m_model->getPossibleMoves()[i].second);
-                                m_view->move();
+                        if (event.type == sf::Event::MouseButtonPressed){
+                            if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
+                                m_view->drawPossibleMoves();
                             }
-                        
+                            for (unsigned int i = 0; i < moves.size(); i++){
+                                if (sf::IntRect(m_model->getPossibleMoves()[i].first * CELL_SIZE, m_model->getPossibleMoves()[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
+                                    m_model->makeTurn(m_model->getPossibleMoves()[i].first, m_model->getPossibleMoves()[i].second);
+                                    m_view->move();
+                                }
+                            
+                            }
+                            // try{
+                            //     m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, horizontal);
+                            //     wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
+                            //     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
+                            //     window.draw(wSprite);
+                            // } catch(const std::invalid_argument & e){
+                            //     std::cout << e.what() << std::endl;
+                            // }
+                            // try{
+                            //     m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, vertical);
+                            //     wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
+                            //     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
+                            //     window.draw(wSprite);
+                            // } catch(const std::invalid_argument & e){
+                            //     std::cout << e.what() << std::endl;
+                            // }
                         }
-                        // try{
-                        //     m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, horizontal);
-                        //     wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
-                        //     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
-                        //     window.draw(wSprite);
-                        // } catch(const std::invalid_argument & e){
-                        //     std::cout << e.what() << std::endl;
-                        // }
-                        // try{
-                        //     m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, vertical);
-                        //     wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
-                        //     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
-                        //     window.draw(wSprite);
-                        // } catch(const std::invalid_argument & e){
-                        //     std::cout << e.what() << std::endl;
-                        // }
                     }
                 }
             } else {
