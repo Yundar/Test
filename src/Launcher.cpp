@@ -34,14 +34,14 @@ void Launcher::menu(){
 		menuNum = 0;
 		window.clear(Color(129, 181, 221));
  
-		if (IntRect(100, 30, 300, 50).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Blue); menuNum = 1; }
-		if (IntRect(100, 90, 300, 50).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Blue); menuNum = 2; }
-		if (IntRect(100, 150, 300, 50).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Blue); menuNum = 3; }
+		if (sf::IntRect(100, 30, 300, 50).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Blue); menuNum = 1; }
+		if (sf::IntRect(100, 90, 300, 50).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Blue); menuNum = 2; }
+		if (sf::IntRect(100, 150, 300, 50).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Blue); menuNum = 3; }
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
 			if (menuNum == 1) isMenu = false;
-			if (menuNum == 2) { isMenu = false }
+			if (menuNum == 2) { isMenu = false; }
 			if (menuNum == 3)  { window.close(); isMenu = false; }
  
 		}
