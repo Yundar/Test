@@ -51,6 +51,9 @@ void View::drawMap(Board board) {
                 switch (board.getTile(i,j))
                 {
                 case 2:
+                    wSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
+                    wSprite.setPosition(i * CELL_SIZE, j * CELL_SIZE);
+                    m_window.draw(wSprite);
                     break;
                 case 1:
                     mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
@@ -152,13 +155,13 @@ sf::RenderWindow *View::getWindow(){
 }
 
 void View::drawHorizontalWall(sf::Vector2i pixelPos){
-    wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
+    wSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
     m_window.draw(wSprite);
 }
 
 void View::drawVerticalWall(sf::Vector2i pixelPos){
-    wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
+    wSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
     m_window.draw(wSprite);
 }
