@@ -109,7 +109,7 @@ void View::drawMap(Board board) {
         pSprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
         window.draw(pSprite);
 
-        pSprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
+        pSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
         pSprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
         window.draw(pSprite);
         // sf::RectangleShape player1(sf::Vector2i(30, 30));
