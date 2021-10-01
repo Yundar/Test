@@ -1,4 +1,6 @@
 #include "Controller.h"
+#include "View.h"
+#include "View.cpp"
 
 Controller::Controller(Game *model) {
     m_model = model;

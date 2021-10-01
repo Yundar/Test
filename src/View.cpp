@@ -8,6 +8,8 @@ View::View(Game *model) {
     m_model = model;
     m_model->addObserver(this);
 
+    sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
+
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
     mSprite.setTexture(mTexture);
@@ -54,8 +56,6 @@ void View::drawMap(Board board) {
     m_model->getCurrentPlayerPosition(&x, &y);
 
     std::vector<std::pair<int,int>> moves;
-
-    sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
 
     window.clear(sf::Color(0x80, 0x80, 0x0));
 
@@ -107,7 +107,6 @@ void View::drawMap(Board board) {
                 }
                 for (unsigned int i = 0; i < moves.size(); i++){
                     if (sf::IntRect(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
-                        std::cout << moves[i].first * CELL_SIZE - p1Sprite.getPosition().x << std::endl;
                         p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
                         window.draw(p1Sprite);
                         for (unsigned int j = 0; j < moves.size(); j++){
