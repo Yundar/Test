@@ -60,13 +60,16 @@ void View::drawMap(Board board) {
 
     while (window.isOpen()){
 
+        Vector2i pixelPos = sf::Mouse::getPosition(window);
+		Vector2f pos = window.mapPixelToCoords(pixelPos);
+
         sf::Event event;
         while (window.pollEvent(event)){
             if (event.type == sf::Event::Closed){
                 window.close();
             }
             if (event.type == sf::Event::MouseButtonPressed){
-                if (pSprite.getGlobalBounds().contains(sf::Mouse::getPosition(window))){
+                if (pSprite.getGlobalBounds().contains(pos.x, pos.y){
                     moves = m_model->getPossibleMoves();
                     std::cout << "That's ok" << std::endl;
                     for (unsigned int i = 0; i < moves.size(); i++){
