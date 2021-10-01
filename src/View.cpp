@@ -36,8 +36,6 @@ void View::update() {
     std::cout << std::endl;
 
     drawMap(m_model->getBoard());
-
-    m_window.display();
 }
 
 void View::drawMap(Board board) {
@@ -74,6 +72,8 @@ void View::drawMap(Board board) {
     p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
     p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
     m_window.draw(p2Sprite);
+
+    m_window.display();
 
     // while (window.isOpen()){
 
