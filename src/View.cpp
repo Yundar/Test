@@ -13,7 +13,8 @@ View::View(Game *model) {
     mSprite.setTexture(mTexture);
     pTexture.loadFromFile("./media/players2.png");
     pTexture.setSmooth(true);
-    pSprite.setTexture(pTexture);
+    p1Sprite.setTexture(pTexture);
+    p2Sprite.setTexture(pTexture);
 }
 
 void View::update() {
@@ -106,13 +107,15 @@ void View::drawMap(Board board) {
                 window.draw(mSprite);
             }
         }
-        pSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
-        pSprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
-        window.draw(pSprite);
+        p1Sprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
+        p1Sprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
+        window.draw(p1Sprite);
 
-        pSprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
-        pSprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
-        window.draw(pSprite);
+        p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
+        p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
+        window.draw(p2Sprite);
+
+        currentPlayerSprite = p1Sprite;
         // sf::RectangleShape player1(sf::Vector2i(30, 30));
         // player1.setPosition({x1 * 30, y1 * 30});
         // player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
