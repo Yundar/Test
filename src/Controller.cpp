@@ -13,11 +13,8 @@ Controller::Controller(Game *model, View *view) {
 void Controller::start() {
     sf::Window *window = m_view->getWindow();
     try {
-        if (m_model->checkGameEnd() == true) break;
-        
-        
-
         while (window->isOpen()){
+            if (m_model->checkGameEnd() == true) break;
             if (m_model->getCurrentPlayerNeedsInput()) {
                 int x, y;
                 m_model->getCurrentPlayerPosition(&x, &y);
