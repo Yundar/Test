@@ -154,11 +154,11 @@ sf::RenderWindow *View::getWindow(){
 void View::drawHorizontalWall(){
     wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
-    window.draw(wSprite);
+    m_window.draw(wSprite);
 }
 
 void View::drawVerticalWall(){
     wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
-    window.draw(wSprite);
+    m_window.draw(wSprite);
 }
