@@ -24,4 +24,6 @@ private:
 
 public:
     void menu();
-}
+};
+
+#endif // LAUNCHER_H
