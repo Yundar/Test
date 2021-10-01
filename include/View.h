@@ -19,8 +19,6 @@ private:
     sf::Texture mTexture;
     sf::Sprite mSprite;
 
-    sf::RenderWindow window;
-
     sf::Texture pTexture;
     sf::Sprite p1Sprite;
     sf::Sprite p2Sprite;
