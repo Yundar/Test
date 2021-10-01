@@ -4,7 +4,7 @@
 #include <SFML/Window.hpp>
 
 
-Launcher::Launcher(sf::RenderWindow *window){
+Launcher::Launcher(){
     sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
     window.clear(sf::Color(129, 181, 221));
 
