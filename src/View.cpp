@@ -62,28 +62,6 @@ void View::drawMap(Board board) {
         sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
 		sf::Vector2f pos = window.mapPixelToCoords(pixelPos);
 
-        sf::Event event;
-        while (window.pollEvent(event)){
-            if (event.type == sf::Event::Closed){
-                window.close();
-            }
-            if (event.type == sf::Event::MouseButtonPressed){
-                if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
-                    moves = m_model->getPossibleMoves();
-                    std::cout << "That's ok" << std::endl;
-                    
-                    // if (currentPlayerSprite == p1Sprite){
-                    //     currentPlayerSprite = p2Sprite;
-                    // } else currentPlayerSprite = p1Sprite;
-                    for (unsigned int i = 0; i < moves.size(); i++){
-                        mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
-                        mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
-                        window.draw(mSprite);
-                    }
-                }
-            }
-        }
-
         window.clear(sf::Color(0x80, 0x80, 0x0));
 
         for(int i = 0; i < ARRAY_SIZE; i++){
