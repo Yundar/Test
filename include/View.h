@@ -42,6 +42,8 @@ public:
     void drawMap(Board board);
     void drawPossibleMoves();
     void move(unsigned int i);
+    void View::drawHorizontalWall();
+    void View::drawVerticalWall();
 };
 
 #endif // VIEW_H

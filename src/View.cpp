@@ -50,6 +50,8 @@ void View::drawMap(Board board) {
             for(int j = 0; j < ARRAY_SIZE; j++){
                 switch (board.getTile(i,j))
                 {
+                case 2:
+                    break;
                 case 1:
                     mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
                     break;
@@ -147,4 +149,16 @@ void View::move(unsigned int i){
 
 sf::RenderWindow *View::getWindow(){
     return &m_window;
+}
+
+void View::drawHorizontalWall(){
+    wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
+    wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
+    window.draw(wSprite);
+}
+
+void View::drawVerticalWall(){
+    wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
+    wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
+    window.draw(wSprite);
 }
