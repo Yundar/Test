@@ -88,7 +88,7 @@ void View::drawMap(Board board) {
     while (window.isOpen()){
 
         sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
-		sf::Vector2i pos = window.mapPixelToCoords(pixelPos);
+		// sf::Vector2f pos = window.mapPixelToCoords(pixelPos);
 
         sf::Event event;
         while (window.pollEvent(event)){
@@ -96,7 +96,7 @@ void View::drawMap(Board board) {
                 window.close();
             }
             if (event.type == sf::Event::MouseButtonPressed){
-                if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
+                if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
                     moves = m_model->getPossibleMoves();                    
                     // if (currentPlayerSprite == p1Sprite){
                     //     currentPlayerSprite = p2Sprite;
@@ -121,7 +121,7 @@ void View::drawMap(Board board) {
                     }
                 
                 }
-                std::cout << pos.x / 30 << " " << pos.y / 30 << std::endl;
+                std::cout << pixelPos.x / 30 << " " << pixelPos.y / 30 << std::endl;
             }
         }
 
