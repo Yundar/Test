@@ -107,9 +107,7 @@ void View::drawMap(Board board) {
                 }
                 for (unsigned int i = 0; i < moves.size(); i++){
                     if (sf::IntRect(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
-                        p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
-                        p2Sprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
-                        window.draw(p2Sprite);
+                        p1Sprite.move(sf::Vector2f((p1Sprite.getPosition().x - moves[i].first) * CELL_SIZE, (p1Sprite.getPosition().y - moves[i].second) * CELL_SIZE))
                         for (unsigned int j = 0; j < moves.size(); j++){
                             mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
                             mSprite.setPosition(moves[j].first * CELL_SIZE, moves[j].second * CELL_SIZE);
