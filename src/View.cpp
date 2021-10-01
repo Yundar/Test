@@ -10,7 +10,7 @@ View::View(Game *model) {
 
     window.create(sf::VideoMode({510, 510}), "Quoridor");
 
-    window.clear(sf::Color(0x80, 0x80, 0x0));
+    // window.clear(sf::Color(0x80, 0x80, 0x0));
 
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
