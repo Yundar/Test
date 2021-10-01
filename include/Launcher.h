@@ -23,6 +23,8 @@ private:
     int menuNum;
 
 public:
+    Launcher();
+    
     void menu();
 };
 
