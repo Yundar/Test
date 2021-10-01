@@ -127,7 +127,7 @@ void View::drawMap(Board board) {
                 
                 }
                 try{
-                    m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, horizontal)
+                    m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, horizontal);
                     wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
                     wSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
                     window.draw(wSprite);
@@ -135,7 +135,7 @@ void View::drawMap(Board board) {
                     throw;
                 }
                 try{
-                    m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, vertical)
+                    m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, vertical);
                     wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
                     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
                     window.draw(wSprite);
