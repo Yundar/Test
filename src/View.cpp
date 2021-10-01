@@ -8,7 +8,7 @@ View::View(Game *model) {
     m_model = model;
     m_model->addObserver(this);
 
-    window(sf::VideoMode({510, 510}), "Quoridor");
+    window.create(sf::VideoMode({510, 510}), "Quoridor");
 
     window.clear(sf::Color(0x80, 0x80, 0x0));
 
