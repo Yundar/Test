@@ -16,7 +16,7 @@ class View : public Observer {
 private:
     Game *m_model;
 
-    sf::RenderWindow window;
+    sf::RenderWindow m_window;
 
     sf::Texture mTexture;
     sf::Sprite mSprite;
@@ -34,6 +34,8 @@ public:
     ~View() = default;
 
     virtual void update();
+
+    sf::RenderWindow getWindow();
 
     // ! Test function
     // ! Don't use it

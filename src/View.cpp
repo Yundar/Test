@@ -8,9 +8,9 @@ View::View(Game *model) {
     m_model = model;
     m_model->addObserver(this);
 
-    window.create(sf::VideoMode({510, 510}), "Quoridor");
+    m_window.create(sf::VideoMode({510, 510}), "Quoridor");
 
-    window.clear(sf::Color(0x80, 0x80, 0x0));
+    m_window.clear(sf::Color(0x80, 0x80, 0x0));
 
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
@@ -37,7 +37,7 @@ void View::update() {
 
     drawMap(m_model->getBoard());
 
-    window.display();
+    m_window.display();
 }
 
 void View::drawMap(Board board) {
@@ -59,16 +59,16 @@ void View::drawMap(Board board) {
                     break;
                 }
                 mSprite.setPosition(j * CELL_SIZE, i * CELL_SIZE);
-                window.draw(mSprite);
+                m_window.draw(mSprite);
             }   
         }
     p1Sprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
     p1Sprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
-    window.draw(p1Sprite);
+    m_window.draw(p1Sprite);
 
     p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
     p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
-    window.draw(p2Sprite);
+    m_window.draw(p2Sprite);
 
     // while (window.isOpen()){
 
@@ -129,18 +129,22 @@ void View::drawPossibleMoves(){
     for (unsigned int i = 0; i < moves.size(); i++){
         mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
         mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
-        window.draw(mSprite);
+        m_window.draw(mSprite);
     }
 }
 
 void View::move(unsigned int i){
     moves = m_model->getPossibleMoves();    
     p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
-    window.draw(p1Sprite);
+    m_window.draw(p1Sprite);
     for (unsigned int j = 0; j < moves.size(); j++){
         mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
         mSprite.setPosition(moves[j].first * CELL_SIZE, moves[j].second * CELL_SIZE);
-        window.draw(mSprite);
+        m_window.draw(mSprite);
     }
     moves.clear();
+}
+
+sf::RenderWindow getWindow(){
+    return m_window;
 }
