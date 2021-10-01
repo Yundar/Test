@@ -126,7 +126,7 @@ void View::drawMap(Board board) {
                     }
                 
                 }
-                if (event.type == sf::Mouse::Right){
+                if (sf::Mouse::Right){
                     try{
                         m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, horizontal);
                         wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
