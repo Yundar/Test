@@ -11,7 +11,7 @@ View::View(Game *model) {
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
     mSprite.setTexture(mTexture);
-    pTexture.loadFromFile("./media/players.png");
+    pTexture.loadFromFile("./media/players2.png");
     pTexture.setSmooth(true);
     pSprite.setTexture(pTexture);
 }
