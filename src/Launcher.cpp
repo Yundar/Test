@@ -6,6 +6,7 @@
 
 Launcher::Launcher(sf::RenderWindow *window){
     sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
+    window.clear(sf::Color(129, 181, 221));
 
     singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
     multiplayerTexture.loadFromFile("./media/Multiplayer.png");
@@ -32,7 +33,7 @@ void Launcher::menu(){
 		multiplayer.setColor(sf::Color::White);
 		exit.setColor(sf::Color::White);
 		menuNum = 0;
-		window.clear(Color(129, 181, 221));
+
  
 		if (sf::IntRect(100, 30, 300, 50).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Blue); menuNum = 1; }
 		if (sf::IntRect(100, 90, 300, 50).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Blue); menuNum = 2; }

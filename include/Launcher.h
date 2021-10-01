@@ -22,8 +22,6 @@ private:
     bool isMenu;
     int menuNum;
 
-    sf::RenderWindow *window;
-
 public:
     void menu();
 }
