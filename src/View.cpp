@@ -8,7 +8,7 @@ View::View(Game *model) {
     m_model = model;
     m_model->addObserver(this);
 
-    sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
+    window(sf::VideoMode({510, 510}), "Quoridor");
 
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
