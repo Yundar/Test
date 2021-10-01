@@ -55,10 +55,14 @@ void View::drawMap(Board board) {
                     break;
                 case tile:
                     mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
+                    mSprite.setPosition(i * CELL_SIZE, j * CELL_SIZE);
+                    m_window.draw(mSprite);
                     break;
                 
                 case empty:
                     mSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
+                    mSprite.setPosition(i * CELL_SIZE, j * CELL_SIZE);
+                    m_window.draw(mSprite);
                     break;
                 }
                 mSprite.setPosition(j * CELL_SIZE, i * CELL_SIZE);

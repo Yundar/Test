@@ -26,8 +26,6 @@ void Controller::start() {
                     int x, y;
                     m_model->getCurrentPlayerPosition(&x, &y);
 
-                    // m_view->drawMap(m_model->getBoard());
-
                     sf::Vector2i pixelPos = sf::Mouse::getPosition(*window);
                     sf::Event event;
                     while(window->pollEvent(event)){
@@ -39,12 +37,10 @@ void Controller::start() {
                                 m_view->drawPossibleMoves();
                             } else{
                                 m_model->makeTurn(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE);
-                                break;
                             }
                             for (unsigned int i = 0; i < m_model->getPossibleMoves().size(); i++){
                                 if (sf::IntRect(m_model->getPossibleMoves()[i].first * CELL_SIZE, m_model->getPossibleMoves()[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
                                     m_model->makeTurn(m_model->getPossibleMoves()[i].first, m_model->getPossibleMoves()[i].second);
-                                    break;
                                 }
                             }
                             
