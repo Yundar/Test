@@ -15,8 +15,12 @@ const int ARRAY_SIZE = 17;
 class View : public Observer {
 private:
     Game *m_model;
+
     sf::Texture mTexture;
     sf::Sprite mSprite;
+
+    sf::Texture pTexture;
+    sf::Sprite pSprite;
 
 public:
     View(Game *model);
