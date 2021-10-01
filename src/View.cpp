@@ -54,6 +54,8 @@ void View::drawMap(Board board) {
 
     std::vector<std::pair<int,int>> moves;
 
+    std::cout << x << y << std::endl;
+
     // sf::String TileMap[] = 
 
     sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
