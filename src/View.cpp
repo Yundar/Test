@@ -76,7 +76,6 @@ void View::drawMap(Board board) {
                     //     currentPlayerSprite = p2Sprite;
                     // } else currentPlayerSprite = p1Sprite;
                     for (unsigned int i = 0; i < moves.size(); i++){
-                        std::cout << moves[i].first << " " << moves[i].second << std::endl;
                         mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
                         mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
                         window.draw(mSprite);
@@ -110,6 +109,12 @@ void View::drawMap(Board board) {
         p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
         p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
         window.draw(p2Sprite);
+
+        moves = m_model->getPossibleMoves();
+
+        mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
+        mSprite.setPosition(moves[0].first * CELL_SIZE, moves[0].second * CELL_SIZE);
+        window.draw(mSprite);
 
         currentPlayerSprite = p1Sprite;
         // sf::RectangleShape player1(sf::Vector2i(30, 30));
