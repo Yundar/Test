@@ -13,10 +13,15 @@ View::View(Game *model) {
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
     mSprite.setTexture(mTexture);
+
     pTexture.loadFromFile("./media/players2.png");
     pTexture.setSmooth(true);
     p1Sprite.setTexture(pTexture);
     p2Sprite.setTexture(pTexture);
+
+    wTexture.loadFromFile("./media/walls.png");
+    wTexture.setSmooth(true);
+    wSprite.setTexture(wTexture);
 }
 
 void View::update() {
@@ -121,7 +126,22 @@ void View::drawMap(Board board) {
                     }
                 
                 }
-                std::cout << pixelPos.x / 30 << " " << pixelPos.y / 30 << std::endl;
+                try{
+                    m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, horizontal)
+                    wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
+                    wSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
+                    window.draw(wSprite);
+                } catch(std::invalid_argument){
+                    throw;
+                }
+                try{
+                    m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, vertical)
+                    wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
+                    wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
+                    window.draw(wSprite);
+                } catch(std::invalid_argument){
+                    throw;
+                }
             }
         }
 
