@@ -7,7 +7,7 @@ Controller::Controller(Game *model, View *view) {
     m_view = view;
     m_model->initGame();
 
-    window = m_view->getWindow();
+    sf::Window window = m_view->getWindow();
 }
 
 void Controller::start() {
