@@ -110,13 +110,30 @@ void View::drawMap(Board board) {
         p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
         window.draw(p2Sprite);
 
-        moves = m_model->getPossibleMoves();
-
-        mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
-        mSprite.setPosition(moves[0].first * CELL_SIZE, moves[0].second * CELL_SIZE);
-        window.draw(mSprite);
-
         currentPlayerSprite = p1Sprite;
+
+        sf::Event event;
+        while (window.pollEvent(event)){
+            if (event.type == sf::Event::Closed){
+                window.close();
+            }
+            if (event.type == sf::Event::MouseButtonPressed){
+                if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
+                    moves = m_model->getPossibleMoves();
+                    std::cout << "That's ok" << std::endl;
+                    
+                    // if (currentPlayerSprite == p1Sprite){
+                    //     currentPlayerSprite = p2Sprite;
+                    // } else currentPlayerSprite = p1Sprite;
+                    for (unsigned int i = 0; i < moves.size(); i++){
+                        mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
+                        mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
+                        window.draw(mSprite);
+                    }
+                }
+            }
+        }
+
         // sf::RectangleShape player1(sf::Vector2i(30, 30));
         // player1.setPosition({x1 * 30, y1 * 30});
         // player1.setFillColor(sf::Color(0x80, 0x80, 0x0));
