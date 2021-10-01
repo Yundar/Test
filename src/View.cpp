@@ -50,16 +50,16 @@ void View::drawMap(Board board) {
             for(int j = 0; j < ARRAY_SIZE; j++){
                 switch (board.getTile(i,j))
                 {
-                case 2:
+                case wall:
                     wSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
                     wSprite.setPosition(i * CELL_SIZE, j * CELL_SIZE);
                     m_window.draw(wSprite);
                     break;
-                case 1:
+                case tile:
                     mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
                     break;
                 
-                case 0:
+                case empty:
                     mSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
                     break;
                 }
@@ -137,19 +137,19 @@ void View::drawPossibleMoves(){
         mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
         m_window.draw(mSprite);
     }
-    moves.clear();
+    m_window.display();
 }
 
 void View::move(unsigned int i){
     moves = m_model->getPossibleMoves();    
-    // p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
-    // m_window.draw(p1Sprite);
+    p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
+    m_window.draw(p1Sprite);
     for (unsigned int j = 0; j < moves.size(); j++){
         mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
         mSprite.setPosition(moves[j].first * CELL_SIZE, moves[j].second * CELL_SIZE);
         m_window.draw(mSprite);
     }
-    moves.clear();
+    m_window.display();
 }
 
 sf::RenderWindow *View::getWindow(){
@@ -160,10 +160,12 @@ void View::drawHorizontalWall(sf::Vector2i pixelPos){
     wSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
     m_window.draw(wSprite);
+    m_window.display();
 }
 
 void View::drawVerticalWall(sf::Vector2i pixelPos){
     wSprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
     m_window.draw(wSprite);
+    m_window.display();
 }
