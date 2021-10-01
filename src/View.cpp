@@ -66,7 +66,7 @@ void View::drawMap(Board board) {
                 window.close();
             }
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-                if (sf::IntRect(x, y, CELL_SIZE, CELL_SIZE).contains(sf::Mouse::getPosition(window))){
+                if (sf::IntRect(x1, y1, CELL_SIZE, CELL_SIZE).contains(sf::Mouse::getPosition(window))){
                     moves = m_model->getPossibleMoves();
                     std::cout << "That's ok" << std::endl;
                     for (unsigned int i = 0; i < moves.size(); i++){
