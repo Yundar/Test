@@ -44,7 +44,6 @@ void Controller::start() {
                             for (unsigned int i = 0; i < m_model->getPossibleMoves().size(); i++){
                                 if (sf::IntRect(m_model->getPossibleMoves()[i].first * CELL_SIZE, m_model->getPossibleMoves()[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
                                     m_model->makeTurn(m_model->getPossibleMoves()[i].first, m_model->getPossibleMoves()[i].second);
-                                    // m_view->move(i);
                                     break;
                                 }
                             }
