@@ -131,7 +131,7 @@ void View::drawMap(Board board) {
                     wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
                     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
                     window.draw(wSprite);
-                } catch(std::invalid_argument){
+                } catch(std::invalid_argument const&){
                     throw;
                 }
                 try{
@@ -139,7 +139,7 @@ void View::drawMap(Board board) {
                     wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
                     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
                     window.draw(wSprite);
-                } catch(std::invalid_argument){
+                } catch(std::invalid_argument const&){
                     throw;
                 }
             }
