@@ -60,8 +60,8 @@ void View::drawMap(Board board) {
 
     while (window.isOpen()){
 
-        Vector2i pixelPos = sf::Mouse::getPosition(window);
-		Vector2f pos = window.mapPixelToCoords(pixelPos);
+        sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+		sf::Vector2f pos = window.mapPixelToCoords(pixelPos);
 
         sf::Event event;
         while (window.pollEvent(event)){
