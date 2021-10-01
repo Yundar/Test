@@ -7,10 +7,11 @@ Controller::Controller(Game *model, View *view) {
     m_view = view;
     m_model->initGame();
 
-    sf::Window window = m_view->getWindow();
+    
 }
 
 void Controller::start() {
+    sf::Window *window = m_view->getWindow();
     while (true) {
         try {
             if (m_model->checkGameEnd() == true) break;
@@ -21,15 +22,15 @@ void Controller::start() {
                 // if (x == 21) break;
 
                 // m_model->makeTurn(x, y);
-                while (window.isOpen()){
+                while (window->isOpen()){
                     int x, y;
                     m_model->getCurrentPlayerPosition(&x, &y);
 
                     sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
                     sf::Event event;
-                    while(window.pollEvent(event)){
+                    while(window->pollEvent(event)){
                         if (event.type == sf::Event::Closed){
-                            window.close();
+                            window->close();
                         }
                         if (event.type == sf::Event::MouseButtonPressed){
                             if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
