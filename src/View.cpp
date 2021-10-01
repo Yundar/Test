@@ -75,15 +75,15 @@ void View::drawMap(Board board) {
                 window.draw(mSprite);
             }   
         }
-        p1Sprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
-        p1Sprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
-        window.draw(p1Sprite);
+    p1Sprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
+    p1Sprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
+    window.draw(p1Sprite);
 
-        p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
-        p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
-        window.draw(p2Sprite);
+    p2Sprite.setTextureRect(sf::IntRect(30, 0, CELL_SIZE, CELL_SIZE));
+    p2Sprite.setPosition(x2 * CELL_SIZE, y2 * CELL_SIZE);
+    window.draw(p2Sprite);
 
-        currentPlayerSprite = p1Sprite;
+    currentPlayerSprite = p1Sprite;
 
     while (window.isOpen()){
 
