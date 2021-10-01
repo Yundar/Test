@@ -131,16 +131,16 @@ void View::drawMap(Board board) {
                     wSprite.setTextureRect(sf::IntRect(0, 0, 90, CELL_SIZE));
                     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
                     window.draw(wSprite);
-                } catch(const std::invalid_argument& e){
-                    std::cout << e << std::endl;
+                } catch(const std::invalid_argument & e){
+                    std::cout << e.what() << std::endl;
                 }
                 try{
                     m_model->placeWall(pixelPos.x / CELL_SIZE, pixelPos.y / CELL_SIZE, vertical);
                     wSprite.setTextureRect(sf::IntRect(90, 0, CELL_SIZE, 90));
                     wSprite.setPosition((pixelPos.x / CELL_SIZE) * CELL_SIZE, (pixelPos.y / CELL_SIZE) * CELL_SIZE);
                     window.draw(wSprite);
-                } catch(const std::invalid_argument& e){
-                    std::cout << e << std::endl;
+                } catch(const std::invalid_argument & e){
+                    std::cout << e.what() << std::endl;
                 }
             }
         }
