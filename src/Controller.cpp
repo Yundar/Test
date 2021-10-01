@@ -26,7 +26,7 @@ void Controller::start() {
                     int x, y;
                     m_model->getCurrentPlayerPosition(&x, &y);
 
-                    sf::Vector2i pixelPos = sf::Mouse::getPosition(window);
+                    sf::Vector2i pixelPos = sf::Mouse::getPosition(*window);
                     sf::Event event;
                     while(window->pollEvent(event)){
                         if (event.type == sf::Event::Closed){
