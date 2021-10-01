@@ -71,20 +71,15 @@ void View::drawMap(Board board) {
                 if (sf::IntRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
                     moves = m_model->getPossibleMoves();
                     std::cout << "That's ok" << std::endl;
+                    std::cout << moves[0].first << " " << moves[0].secon << std::endl;
+                    if (currentPlayerSprite == p1Sprite){
+                        currentPlayerSprite = p2Sprite;
+                    } else currentPlayerSprite = p1Sprite;
                     for (unsigned int i = 0; i < moves.size(); i++){
                         mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
                         mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
                         window.draw(mSprite);
                     }
-                }
-            }
-            if (event.type == sf::Event::KeyPressed){
-                moves = m_model->getPossibleMoves();
-                std::cout << "That's ok" << std::endl;
-                for (unsigned int i = 0; i < moves.size(); i++){
-                    mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
-                    mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
-                    window.draw(mSprite);
                 }
             }
         }
@@ -105,7 +100,7 @@ void View::drawMap(Board board) {
                 }
                 mSprite.setPosition(j * CELL_SIZE, i * CELL_SIZE);
                 window.draw(mSprite);
-            }
+            }   
         }
         p1Sprite.setTextureRect(sf::IntRect(0, 0, CELL_SIZE, CELL_SIZE));
         p1Sprite.setPosition(x1 * CELL_SIZE, y1 * CELL_SIZE);
