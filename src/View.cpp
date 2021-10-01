@@ -112,6 +112,7 @@ void View::drawMap(Board board) {
                         currentPlayerSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
                         for (unsigned int i = 0; i < moves.size(); i++){
                             mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
+                        }
                     }
                 }
             }
