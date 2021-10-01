@@ -111,6 +111,7 @@ void View::drawMap(Board board) {
                     if (sf::IntRect(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
                         p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
                         window.draw(p1Sprite);
+                        m_model->makeTurn(moves[i].first, moves[i].second);
                         for (unsigned int j = 0; j < moves.size(); j++){
                             mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
                             mSprite.setPosition(moves[j].first * CELL_SIZE, moves[j].second * CELL_SIZE);
@@ -120,6 +121,7 @@ void View::drawMap(Board board) {
                     }
                 
                 }
+                std::cout << pos.x / 30 << " " << pos.y / 30 << std::endl;
             }
         }
 
