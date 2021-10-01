@@ -145,6 +145,6 @@ void View::move(unsigned int i){
     moves.clear();
 }
 
-sf::RenderWindow View::getWindow(){
-    return &m_window;
+sf::RenderWindow *View::getWindow(){
+    return m_window;
 }

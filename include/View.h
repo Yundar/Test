@@ -35,7 +35,7 @@ public:
 
     virtual void update();
 
-    sf::RenderWindow getWindow();
+    sf::RenderWindow *getWindow();
 
     // ! Test function
     // ! Don't use it
