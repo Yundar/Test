@@ -109,7 +109,7 @@ void View::drawMap(Board board) {
                 }
                 for (unsigned int i = 0; i < moves.size(); i++){
                     if (sf::IntRect(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pos.x, pos.y)){
-                        p1Sprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
+                        p1Sprite.setPosition(8 * CELL_SIZE, 16 * CELL_SIZE);
                         window.draw(p1Sprite);
                         for (unsigned int j = 0; j < moves.size(); j++){
                             mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
