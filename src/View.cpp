@@ -10,6 +10,8 @@ View::View(Game *model) {
 
     sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
 
+    window.clear(sf::Color(0x80, 0x80, 0x0));
+
     mTexture.loadFromFile("./media/map.png");
     mTexture.setSmooth(true);
     mSprite.setTexture(mTexture);
@@ -57,7 +59,7 @@ void View::drawMap(Board board) {
 
     std::vector<std::pair<int,int>> moves;
 
-    window.clear(sf::Color(0x80, 0x80, 0x0));
+
 
     for(int i = 0; i < ARRAY_SIZE; i++){
             for(int j = 0; j < ARRAY_SIZE; j++){
