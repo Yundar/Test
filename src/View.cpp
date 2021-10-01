@@ -67,7 +67,7 @@ void View::drawMap(Board board) {
             }
             if (event.type == sf::Event::MouseButtonReleased){
                 if (sf::IntRect(x, y, CELL_SIZE, CELL_SIZE).contains(sf::Mouse::getPosition(window))){
-                    m_model->getPossibleMoves();
+                    moves = m_model->getPossibleMoves();
                     for (int i = 0; i < moves.size(); i++){
                         mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
                         mSprite.setPosition(moves[i].first * CELL_SIZE, moves[i].second * CELL_SIZE);
