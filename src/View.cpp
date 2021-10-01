@@ -146,5 +146,5 @@ void View::move(unsigned int i){
 }
 
 sf::RenderWindow getWindow(){
-    return m_window;
+    return *m_window;
 }
