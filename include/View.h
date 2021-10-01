@@ -39,7 +39,7 @@ public:
     // ! Don't use it
     void drawMap(Board board);
     void drawPossibleMoves();
-    void move();
+    void move(unsigned int i);
 };
 
 #endif // VIEW_H

@@ -133,7 +133,7 @@ void View::drawPossibleMoves(){
     }
 }
 
-void View::move(){
+void View::move(unsigned int i){
     moves = m_model->getPossibleMoves();    
     p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
     window.draw(p1Sprite);
