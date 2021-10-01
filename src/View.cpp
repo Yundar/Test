@@ -140,18 +140,6 @@ void View::drawPossibleMoves(){
     m_window.display();
 }
 
-void View::move(unsigned int i){
-    moves = m_model->getPossibleMoves();    
-    p1Sprite.move(sf::Vector2f(moves[i].first * CELL_SIZE - p1Sprite.getPosition().x , moves[i].second * CELL_SIZE - p1Sprite.getPosition().y));
-    m_window.draw(p1Sprite);
-    for (unsigned int j = 0; j < moves.size(); j++){
-        mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
-        mSprite.setPosition(moves[j].first * CELL_SIZE, moves[j].second * CELL_SIZE);
-        m_window.draw(mSprite);
-    }
-    m_window.display();
-}
-
 sf::RenderWindow *View::getWindow(){
     return &m_window;
 }
