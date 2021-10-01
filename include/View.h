@@ -36,6 +36,8 @@ public:
     // ! Test function
     // ! Don't use it
     void drawMap(Board board);
+    void drawPossibleMoves();
+    void move();
 };
 
 #endif // VIEW_H
