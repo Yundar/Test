@@ -65,7 +65,7 @@ void View::drawMap(Board board) {
             if (event.type == sf::Event::Closed){
                 window.close();
             }
-            if (sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            if (event.type == sf::Event::MouseButtonPressed){
                 if (sf::IntRect(x, y, CELL_SIZE, CELL_SIZE).contains(sf::Mouse::getPosition(window))){
                     moves = m_model->getPossibleMoves();
                     std::cout << "That's ok" << std::endl;
@@ -94,7 +94,7 @@ void View::drawMap(Board board) {
                 switch (board.getTile(i,j))
                 {
                 case 1:
-                    mSprite.setTextureRect(sf::IntRect(100, 0, CELL_SIZE, CELL_SIZE));
+                    mSprite.setTextureRect(sf::IntRect(50, 0, CELL_SIZE, CELL_SIZE));
                     break;
                 
                 case 0:
