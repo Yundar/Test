@@ -5,8 +5,7 @@
 
 
 Launcher::Launcher(){
-    sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
-    window.clear(sf::Color(129, 181, 221));
+
 
     singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
     multiplayerTexture.loadFromFile("./media/Multiplayer.png");
@@ -29,6 +28,8 @@ void Launcher::menu(){
 
     while (isMenu)
 	{
+		sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
+    	window.clear(sf::Color(129, 181, 221));
 		singePlayer.setColor(sf::Color::White);
 		multiplayer.setColor(sf::Color::White);
 		exit.setColor(sf::Color::White);
