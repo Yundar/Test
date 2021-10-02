@@ -25,7 +25,8 @@ int main() {
         if (answer == 's') single("Player", "Wally");
         else if (answer == 'm') multi("Player1", "Player2");
         else if (answer == 'e') playAgain = false;
-        else answer = launcher.oneMore(); 
+        
+        answer = launcher.oneMore(); 
 
         // std::cout << "Want to play again? y/N" << std::endl;
         // std::cin >> answer;
