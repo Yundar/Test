@@ -78,8 +78,8 @@ char Launcher::menu(){
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			if (menuNum == 1) { isMenu = false; answer = 's'; return answer }
-			if (menuNum == 2) { isMenu = false; answer = 'm'; return answer }
+			if (menuNum == 1) { isMenu = false; answer = 's'; return answer; }
+			if (menuNum == 2) { isMenu = false; answer = 'm'; return answer; }
 			if (menuNum == 3)  { window.close(); isMenu = false; }
  
 		}
