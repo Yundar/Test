@@ -6,7 +6,7 @@
 
 Launcher::Launcher(bool *playAgain){
 
-	bool *a = playAgain;
+	bool a = playAgain;
 
 
 	
@@ -122,8 +122,8 @@ bool Launcher::oneMore(){
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			if (menuNum == 1) { isOneMore = false; *a = true; return *a; }
-			if (menuNum == 2) { isOneMore = false; return *a; }
+			if (menuNum == 1) { isOneMore = false; a = true; return a; }
+			if (menuNum == 2) { isOneMore = false; return a; }
  
 		}
  
