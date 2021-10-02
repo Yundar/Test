@@ -101,8 +101,8 @@ char Launcher::oneMore(){
    	window.clear(sf::Color(0x80, 0x80, 0x0));
 
 	again.setPosition(100, 160);
-	yes.setPosition(130, 220);
-	no.setPosition(200, 220);
+	yes.setPosition(110, 220);
+	no.setPosition(180, 220);
 
 	again.setColor(sf::Color(0x80, 0x80, 0x0));
 	
