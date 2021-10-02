@@ -15,7 +15,7 @@ int main() {
     bool playAgain = false;
 
     do {
-        Launcher launcher();
+        Launcher launcher(playAgain);
         // std::cout << "You want to play alone or with a friend? S/m" << std::endl;
         // char answer = 's';
         // std::cin >> answer;

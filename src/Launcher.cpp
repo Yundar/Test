@@ -4,7 +4,9 @@
 #include <SFML/Window.hpp>
 
 
-Launcher::Launcher(){
+Launcher::Launcher(bool playAgain){
+
+	bool again = playAgain;
 
 	sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
 	window.clear(sf::Color(129, 181, 221));		

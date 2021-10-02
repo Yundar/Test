@@ -20,6 +20,8 @@ private:
 
     sf::RenderWindow window;
 
+    bool again;
+
     bool isMenu;
     int menuNum;
 
