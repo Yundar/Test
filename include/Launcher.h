@@ -1,13 +1,14 @@
 #ifndef LAUNCHER_H
 #define LAUNCHER_H
 
+// #include "Observer.h"
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
 
 
-class Launcher {
+class Launcher: public Observer {
 private:
     sf::Texture singlePlayerTexture;
     sf::Texture multiplayerTexture;
@@ -24,6 +25,9 @@ private:
 
 public:
     Launcher();
+    ~Launcher() = default;
+
+    // virtual void update();
     
     void menu();
 };
