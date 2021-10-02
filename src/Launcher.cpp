@@ -4,7 +4,7 @@
 #include <SFML/Window.hpp>
 
 
-Launcher::Launcher(bool playAgain){
+Launcher::Launcher(bool *playAgain){
 
 	bool *a = playAgain;
 
