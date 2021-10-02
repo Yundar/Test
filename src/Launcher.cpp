@@ -26,7 +26,7 @@ Launcher::Launcher(bool playAgain){
 
     isMenu = 1;
 
-    menu();
+    // menu();
 }
 
 // void Launcher::update(){
@@ -59,7 +59,8 @@ Launcher::Launcher(bool playAgain){
 // 	}
 // }
 
-void Launcher::menu(){
+char Launcher::menu(){
+	char answer;
 	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
    	window.clear(sf::Color(0x80, 0x80, 0x0));
     while (isMenu)
@@ -77,9 +78,42 @@ void Launcher::menu(){
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			if (menuNum == 1) isMenu = false;
-			if (menuNum == 2) { isMenu = false; }
+			if (menuNum == 1) { isMenu = false; answer = "s"; return answer }
+			if (menuNum == 2) { isMenu = false; answer = "m"; return answer }
 			if (menuNum == 3)  { window.close(); isMenu = false; }
+ 
+		}
+ 
+		window.draw(singePlayer);   
+		window.draw(multiplayer);
+		window.draw(exit);
+		
+		window.display();
+	}
+}
+
+char Launcher::oneMore(){
+	bool isOneMore = 1;
+	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
+   	window.clear(sf::Color(0x80, 0x80, 0x0));
+    while (isMenu)
+	{
+		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0));
+		multiplayer.setColor(sf::Color(0x80, 0x80, 0x0));
+		exit.setColor(sf::Color(0x80, 0x80, 0x0));
+		menuNum = 0;
+		// ::White
+
+ 
+		if (sf::IntRect(100, 160, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
+		if (sf::IntRect(100, 220, 207, 41).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Red); menuNum = 2; }
+		if (sf::IntRect(100, 280, 72, 37).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Red); menuNum = 3; }
+ 
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			if (menuNum == 1) isOneMore = false;
+			if (menuNum == 2) { isOneMore = false; }
+			if (menuNum == 3)  { window.close(); isOneMore = false; }
  
 		}
  

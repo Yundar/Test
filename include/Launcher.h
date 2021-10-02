@@ -29,7 +29,8 @@ public:
 
     // virtual void update();
     
-    void menu();
+    char menu();
+    char oneMore();
 };
 
 #endif // LAUNCHER_H

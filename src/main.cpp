@@ -16,12 +16,14 @@ int main() {
 
     do {
         Launcher launcher(playAgain);
+
+        char answer = launcher.menu();
         // std::cout << "You want to play alone or with a friend? S/m" << std::endl;
         // char answer = 's';
         // std::cin >> answer;
 
-        // if (answer == 's') single("Player", "Wally");
-        // else multi("Player1", "Player2");
+        if (answer == 's') single("Player", "Wally");
+        else multi("Player1", "Player2");
 
         // std::cout << "Want to play again? y/N" << std::endl;
         // std::cin >> answer;
