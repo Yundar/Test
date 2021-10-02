@@ -99,7 +99,7 @@ bool Launcher::oneMore(bool *playAgain){
 	bool isOneMore = 1;
 
 	bool *a = playAgain;
-
+	
 	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
    	window.clear(sf::Color(0x80, 0x80, 0x0));
 
@@ -120,6 +120,7 @@ bool Launcher::oneMore(bool *playAgain){
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
+			// cannot convert 'bool' to 'bool*'
 			if (menuNum == 1) { isOneMore = false; a = true; return a; }
 			if (menuNum == 2) { isOneMore = false; return a; }
  
