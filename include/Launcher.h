@@ -18,8 +18,6 @@ private:
     sf::Sprite multiplayer;
     sf::Sprite exit;
 
-    sf::RenderWindow window;
-
     bool again;
 
     bool isMenu;

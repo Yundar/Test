@@ -8,9 +8,7 @@ Launcher::Launcher(bool playAgain){
 
 	bool again = playAgain;
 
-    window.create(sf::VideoMode({510, 510}), "Quoridor");
 
-    window.clear(sf::Color(0x80, 0x80, 0x0));
 	
 
 
@@ -62,6 +60,8 @@ Launcher::Launcher(bool playAgain){
 // }
 
 void Launcher::menu(){
+	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
+   	window.clear(sf::Color(0x80, 0x80, 0x0));
     while (isMenu)
 	{
 		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0));
