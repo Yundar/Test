@@ -18,18 +18,17 @@ Launcher::Launcher(){
     multiplayer.setTexture(multiplayerTexture);
     exit.setTexture(exitTexture);
 
-    isMenu = 1;
-
-    menu();
-}
-
-void Launcher::menu(){
-    
-    singePlayer.setPosition(100, 30);
+	singePlayer.setPosition(100, 30);
 	multiplayer.setPosition(100, 90);
 	exit.setPosition(100, 150);
 
-    while (isMenu)
+    isMenu = 1;
+
+    // menu();
+}
+
+void Launcher::update(){
+	while (isMenu)
 	{
 
 		singePlayer.setColor(sf::Color::White);
@@ -56,4 +55,8 @@ void Launcher::menu(){
 		
 		window.display();
 	}
+}
+
+void Launcher::menu(){
+    
 }
