@@ -112,8 +112,8 @@ char Launcher::oneMore(){
 		no.setColor(sf::Color(0x80, 0x80, 0x0));
 		menuNum = 0;
  
-		if (sf::IntRect(130, 220, 39, 30).contains(sf::Mouse::getPosition(window))) { yes.setColor(sf::Color::Red); menuNum = 1; }
-		if (sf::IntRect(200, 220, 50, 30).contains(sf::Mouse::getPosition(window))) { no.setColor(sf::Color::Red); menuNum = 2; }
+		if (sf::IntRect(110, 220, 39, 30).contains(sf::Mouse::getPosition(window))) { yes.setColor(sf::Color::Red); menuNum = 1; }
+		if (sf::IntRect(180, 220, 50, 30).contains(sf::Mouse::getPosition(window))) { no.setColor(sf::Color::Red); menuNum = 2; }
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
