@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "View.h"
 #include "Controller.h"
-#include "Launcher2.h"
+#include "Launcher.h"
 
 #include <ctime> // time()
 #include <cstdlib> // rand(), srand()

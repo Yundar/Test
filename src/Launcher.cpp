@@ -26,11 +26,41 @@ Launcher::Launcher(bool playAgain){
 
     isMenu = 1;
 
-    // menu();
+    menu();
 }
 
-void Launcher::update(){
-	while (isMenu)
+// void Launcher::update(){
+// 	while (isMenu)
+// 	{
+
+// 		singePlayer.setColor(sf::Color::White);
+// 		multiplayer.setColor(sf::Color::White);
+// 		exit.setColor(sf::Color::White);
+// 		menuNum = 0;
+
+ 
+// 		if (sf::IntRect(100, 30, 300, 50).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Blue); menuNum = 1; }
+// 		if (sf::IntRect(100, 90, 300, 50).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Blue); menuNum = 2; }
+// 		if (sf::IntRect(100, 150, 300, 50).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Blue); menuNum = 3; }
+ 
+// 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+// 		{
+// 			if (menuNum == 1) isMenu = false;
+// 			if (menuNum == 2) { isMenu = false; }
+// 			if (menuNum == 3)  { window.close(); isMenu = false; }
+ 
+// 		}
+ 
+// 		window.draw(singePlayer);   
+// 		window.draw(multiplayer);
+// 		window.draw(exit);
+		
+// 		window.display();
+// 	}
+// }
+
+void Launcher::menu(){
+    while (isMenu)
 	{
 
 		singePlayer.setColor(sf::Color::White);
@@ -57,8 +87,4 @@ void Launcher::update(){
 		
 		window.display();
 	}
-}
-
-void Launcher::menu(){
-    
 }
