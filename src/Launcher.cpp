@@ -8,7 +8,7 @@ Launcher::Launcher(bool playAgain){
 
 	bool again = playAgain;
 
-	sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor")	
+	sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");	
 
 
     singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
@@ -25,7 +25,7 @@ Launcher::Launcher(bool playAgain){
 
     isMenu = 1;
 
-    menu();
+    // menu();
 }
 
 // void Launcher::update(){
