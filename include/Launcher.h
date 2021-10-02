@@ -37,7 +37,7 @@ public:
     // virtual void update();
     
     char menu();
-    bool oneMore();
+    bool oneMore(bool *playAgain);
 };
 
 #endif // LAUNCHER_H

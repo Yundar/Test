@@ -6,11 +6,7 @@
 
 Launcher::Launcher(bool *playAgain){
 
-	bool *a = playAgain;
-
-
-	
-
+	bool a = playAgain;
 
     singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
     multiplayerTexture.loadFromFile("./media/Multiplayer.png");
@@ -87,7 +83,7 @@ char Launcher::menu(){
 		{
 			if (menuNum == 1) { isMenu = false; answer = 's'; return answer; }
 			if (menuNum == 2) { isMenu = false; answer = 'm'; return answer; }
-			if (menuNum == 3)  { window.close(); isMenu = false; }
+			if (menuNum == 3)  { window.close(); isMenu = false; answer = 'e'; return answer; }
  
 		}
  
@@ -99,8 +95,10 @@ char Launcher::menu(){
 	}
 }
 
-bool Launcher::oneMore(){
+bool Launcher::oneMore(bool *playAgain){
 	bool isOneMore = 1;
+
+	bool *a = playAgain;
 
 	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
    	window.clear(sf::Color(0x80, 0x80, 0x0));
@@ -122,8 +120,8 @@ bool Launcher::oneMore(){
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			if (menuNum == 1) { isOneMore = false; *a = true; return *a; }
-			if (menuNum == 2) { isOneMore = false; return *a; }
+			if (menuNum == 1) { isOneMore = false; a = true; return a; }
+			if (menuNum == 2) { isOneMore = false; return a; }
  
 		}
  
