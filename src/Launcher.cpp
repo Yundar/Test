@@ -64,9 +64,9 @@ Launcher::Launcher(bool playAgain){
 void Launcher::menu(){
     while (isMenu)
 	{
-		singePlayer.setColor(sf::Color::White);
-		multiplayer.setColor(sf::Color::White);
-		exit.setColor(sf::Color::White);
+		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0)// ::White);
+		multiplayer.setColor(sf::Color(0x80, 0x80, 0x0));
+		exit.setColor(sf::Color(0x80, 0x80, 0x0));
 		menuNum = 0;
 
  
