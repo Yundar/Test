@@ -64,10 +64,11 @@ Launcher::Launcher(bool playAgain){
 void Launcher::menu(){
     while (isMenu)
 	{
-		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0)// ::White);
+		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0));
 		multiplayer.setColor(sf::Color(0x80, 0x80, 0x0));
 		exit.setColor(sf::Color(0x80, 0x80, 0x0));
 		menuNum = 0;
+		// ::White
 
  
 		if (sf::IntRect(100, 30, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
