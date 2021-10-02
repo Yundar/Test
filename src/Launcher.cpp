@@ -122,7 +122,7 @@ bool Launcher::oneMore(){
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			if (menuNum == 1) { isOneMore = false; a = 1; return a; }
+			if (menuNum == 1) { isOneMore = false; a = true; return a; }
 			if (menuNum == 2) { isOneMore = false; return a; }
  
 		}
