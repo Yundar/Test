@@ -8,7 +8,7 @@
 
 
 
-class Launcher: {
+class Launcher {
 private:
     sf::Texture singlePlayerTexture;
     sf::Texture multiplayerTexture;
