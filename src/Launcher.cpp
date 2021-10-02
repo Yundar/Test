@@ -8,7 +8,9 @@ Launcher::Launcher(bool playAgain){
 
 	bool again = playAgain;
 
-	sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
+    window.create(sf::VideoMode({510, 510}), "Quoridor");
+
+    window.clear(sf::Color(0x80, 0x80, 0x0));
 	
 
 
