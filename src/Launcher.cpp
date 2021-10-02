@@ -22,9 +22,9 @@ Launcher::Launcher(bool playAgain){
     multiplayer.setTexture(multiplayerTexture);
     exit.setTexture(exitTexture);
 
-	singePlayer.setPosition(100, 200);
-	multiplayer.setPosition(100, 260);
-	exit.setPosition(100, 320);
+	singePlayer.setPosition(100, 180);
+	multiplayer.setPosition(100, 240);
+	exit.setPosition(100, 300);
 
     isMenu = 1;
 
@@ -71,9 +71,9 @@ void Launcher::menu(){
 		// ::White
 
  
-		if (sf::IntRect(100, 200, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
-		if (sf::IntRect(100, 260, 207, 41).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Red); menuNum = 2; }
-		if (sf::IntRect(100, 320, 72, 37).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Red); menuNum = 3; }
+		if (sf::IntRect(100, 180, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
+		if (sf::IntRect(100, 240, 207, 41).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Red); menuNum = 2; }
+		if (sf::IntRect(100, 300, 72, 37).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Red); menuNum = 3; }
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
