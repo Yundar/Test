@@ -13,24 +13,31 @@ private:
     sf::Texture singlePlayerTexture;
     sf::Texture multiplayerTexture;
     sf::Texture exitTexture;
+    sf::Texture againTexture;
+    sf::Texture yesTexture;
+    sf::Texture noTexture;
 
     sf::Sprite singePlayer;
     sf::Sprite multiplayer;
     sf::Sprite exit;
+    sf::Sprite again;
+    sf::Sprite yes;
+    sf::Sprite no;
 
-    bool again;
+    bool *a;
 
     bool isMenu;
+    bool isOneMore;
     int menuNum;
 
 public:
-    Launcher(bool playAgain);
+    Launcher(bool *playAgain);
     ~Launcher() = default;
 
     // virtual void update();
     
     char menu();
-    char oneMore();
+    bool oneMore();
 };
 
 #endif // LAUNCHER_H

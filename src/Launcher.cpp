@@ -6,7 +6,7 @@
 
 Launcher::Launcher(bool playAgain){
 
-	bool again = playAgain;
+	bool *a = playAgain;
 
 
 	
@@ -15,16 +15,17 @@ Launcher::Launcher(bool playAgain){
     singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
     multiplayerTexture.loadFromFile("./media/Multiplayer.png");
     exitTexture.loadFromFile("./media/Exit.png");
+	againTexture.loadFromFile("./media/PlayAgain.png");
+	yesTexture.loadFromFile("./media/Yes.png");
+	noTexture.loadFromFile("./media/No.png");
+	
 
     singePlayer.setTexture(singlePlayerTexture);
     multiplayer.setTexture(multiplayerTexture);
     exit.setTexture(exitTexture);
-
-	singePlayer.setPosition(100, 160);
-	multiplayer.setPosition(100, 220);
-	exit.setPosition(100, 280);
-
-    isMenu = 1;
+	again.setTexture(againTexture);
+	yes.setTexture(yesTexture);
+	no.setTexture(noTexture);
 
     // menu();
 }
@@ -61,16 +62,22 @@ Launcher::Launcher(bool playAgain){
 
 char Launcher::menu(){
 	char answer;
+
+	isMenu = 1;
+
 	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
    	window.clear(sf::Color(0x80, 0x80, 0x0));
+
+	singePlayer.setPosition(100, 160);
+	multiplayer.setPosition(100, 220);
+	exit.setPosition(100, 280);
+
     while (isMenu)
 	{
 		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0));
 		multiplayer.setColor(sf::Color(0x80, 0x80, 0x0));
 		exit.setColor(sf::Color(0x80, 0x80, 0x0));
 		menuNum = 0;
-		// ::White
-
  
 		if (sf::IntRect(100, 160, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
 		if (sf::IntRect(100, 220, 207, 41).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Red); menuNum = 2; }
@@ -92,34 +99,37 @@ char Launcher::menu(){
 	}
 }
 
-char Launcher::oneMore(){
+bool Launcher::oneMore(){
 	bool isOneMore = 1;
+
 	sf::RenderWindow window(sf::VideoMode({510, 510}), "Quoridor");
    	window.clear(sf::Color(0x80, 0x80, 0x0));
-    while (isMenu)
-	{
-		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0));
-		multiplayer.setColor(sf::Color(0x80, 0x80, 0x0));
-		exit.setColor(sf::Color(0x80, 0x80, 0x0));
-		menuNum = 0;
-		// ::White
 
+	again.setPosition(100, 160);
+	yes.setPosition(130, 220);
+	no.setPosition(200, 220);
+
+	again.setColor(sf::Color(0x80, 0x80, 0x0));
+	
+    while (isOneMore)
+	{
+		yes.setColor(sf::Color(0x80, 0x80, 0x0));
+		no.setColor(sf::Color(0x80, 0x80, 0x0));
+		menuNum = 0;
  
-		if (sf::IntRect(100, 160, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
-		if (sf::IntRect(100, 220, 207, 41).contains(sf::Mouse::getPosition(window))) { multiplayer.setColor(sf::Color::Red); menuNum = 2; }
-		if (sf::IntRect(100, 280, 72, 37).contains(sf::Mouse::getPosition(window))) { exit.setColor(sf::Color::Red); menuNum = 3; }
+		if (sf::IntRect(130, 220, 39, 30).contains(sf::Mouse::getPosition(window))) { yes.setColor(sf::Color::Red); menuNum = 1; }
+		if (sf::IntRect(200, 220, 50, 30).contains(sf::Mouse::getPosition(window))) { no.setColor(sf::Color::Red); menuNum = 2; }
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			if (menuNum == 1) isOneMore = false;
-			if (menuNum == 2) { isOneMore = false; }
-			if (menuNum == 3)  { window.close(); isOneMore = false; }
+			if (menuNum == 1) { isOneMore = false; *a = true; return *a }
+			if (menuNum == 2) { isOneMore = false; return *a }
  
 		}
  
-		window.draw(singePlayer);   
-		window.draw(multiplayer);
-		window.draw(exit);
+		window.draw(again);   
+		window.draw(yes);
+		window.draw(no);
 		
 		window.display();
 	}

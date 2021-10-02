@@ -15,7 +15,7 @@ int main() {
     bool playAgain = false;
 
     do {
-        Launcher launcher(playAgain);
+        Launcher launcher(&playAgain);
 
         char answer = launcher.menu();
         // std::cout << "You want to play alone or with a friend? S/m" << std::endl;
@@ -23,7 +23,9 @@ int main() {
         // std::cin >> answer;
 
         if (answer == 's') single("Player", "Wally");
-        else multi("Player1", "Player2");
+        else if (answer == 'm') multi("Player1", "Player2");
+        else if (answer == 'e') playAgain = false;
+        else playAgain = launcher.oneMore(); 
 
         // std::cout << "Want to play again? y/N" << std::endl;
         // std::cin >> answer;
