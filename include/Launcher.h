@@ -25,6 +25,7 @@ private:
     sf::Sprite no;
 
     bool *a;
+    char answer;
 
     bool isMenu;
     bool isOneMore;
@@ -37,7 +38,7 @@ public:
     // virtual void update();
     
     char menu();
-    bool oneMore(bool *playAgain);
+    char oneMore();
 };
 
 #endif // LAUNCHER_H
