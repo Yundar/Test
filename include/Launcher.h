@@ -26,7 +26,7 @@ private:
     int menuNum;
 
 public:
-    Launcher();
+    Launcher(bool playAgain);
     ~Launcher() = default;
 
     virtual void update();
