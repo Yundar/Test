@@ -22,9 +22,9 @@ Launcher::Launcher(bool playAgain){
     multiplayer.setTexture(multiplayerTexture);
     exit.setTexture(exitTexture);
 
-	singePlayer.setPosition(100, 30);
-	multiplayer.setPosition(100, 90);
-	exit.setPosition(100, 150);
+	singePlayer.setPosition(100, 330);
+	multiplayer.setPosition(100, 390);
+	exit.setPosition(100, 450);
 
     isMenu = 1;
 
