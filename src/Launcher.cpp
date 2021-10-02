@@ -8,8 +8,7 @@ Launcher::Launcher(bool playAgain){
 
 	bool again = playAgain;
 
-	sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor");
-	window.clear(sf::Color(129, 181, 221));		
+	sf::RenderWindow window(sf::VideoMode(1376, 768), "Quoridor")	
 
 
     singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
@@ -63,6 +62,7 @@ void Launcher::menu(){
     while (isMenu)
 	{
 
+		window.clear(sf::Color(129, 181, 221));	
 		singePlayer.setColor(sf::Color::White);
 		multiplayer.setColor(sf::Color::White);
 		exit.setColor(sf::Color::White);
