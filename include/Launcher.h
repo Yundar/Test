@@ -8,7 +8,7 @@
 
 
 
-class Launcher: public Observer {
+class Launcher: {
 private:
     sf::Texture singlePlayerTexture;
     sf::Texture multiplayerTexture;
