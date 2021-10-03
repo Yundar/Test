@@ -89,7 +89,7 @@ void View::drawMap(Board board) {
 
     for (int i = 0; i < walls2; i++){
         boardSprite.setTextureRect(sf::IntRect(0, 50, CELL_SIZE*3, CELL_SIZE));
-        boardSprite.setPosition(CELL_SIZE*mapSize + border + 10, 45 + i*15);
+        boardSprite.setPosition(CELL_SIZE + border + 10, 45 + i*15);
         m_Window.draw(boardSprite);
     }
 }
