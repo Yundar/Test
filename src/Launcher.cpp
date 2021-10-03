@@ -9,20 +9,26 @@ Launcher::Launcher(bool *playAgain){
 	bool a = playAgain;
 	char answer;
 
-    singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
-    multiplayerTexture.loadFromFile("./media/Multiplayer.png");
-    exitTexture.loadFromFile("./media/Exit.png");
-	againTexture.loadFromFile("./media/PlayAgain.png");
-	yesTexture.loadFromFile("./media/Yes.png");
-	noTexture.loadFromFile("./media/No.png");
-	
+    // singlePlayerTexture.loadFromFile("./media/SinglePlayer.png");
+    // multiplayerTexture.loadFromFile("./media/Multiplayer.png");
+    // exitTexture.loadFromFile("./media/Exit.png");
+	// againTexture.loadFromFile("./media/PlayAgain.png");
+	// yesTexture.loadFromFile("./media/Yes.png");
+	// noTexture.loadFromFile("./media/No.png");
+	font.loadFromFile("./fonts/Calibri.ttf");
 
-    singePlayer.setTexture(singlePlayerTexture);
-    multiplayer.setTexture(multiplayerTexture);
-    exit.setTexture(exitTexture);
-	again.setTexture(againTexture);
-	yes.setTexture(yesTexture);
-	no.setTexture(noTexture);
+    // singePlayer.setTexture(singlePlayerTexture);
+    // multiplayer.setTexture(multiplayerTexture);
+    // exit.setTexture(exitTexture);
+	// again.setTexture(againTexture);
+	// yes.setTexture(yesTexture);
+	// no.setTexture(noTexture);
+	singePlayer.create("Single player", font, 20);
+	multiplayer.create("Multiplayer", font, 20);
+	exit.create("Exit", font, 20);
+	again.create("Play again?", font, 20);
+	yes.create("Yes", font, 20);
+	no.create("No", font, 20);
 
     // menu();
 }
