@@ -10,7 +10,7 @@ Launcher::Launcher(bool *playAgain)
 	exit("Exit", font, 20),
 	again("Play again?", font, 20),
 	yes("Yes", font, 20),
-	no("No", font, 20);
+	no("No", font, 20)
 {
 	
 
