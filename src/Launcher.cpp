@@ -23,7 +23,7 @@ Launcher::Launcher(bool *playAgain){
 	// again.setTexture(againTexture);
 	// yes.setTexture(yesTexture);
 	// no.setTexture(noTexture);
-	singePlayer.create("Single player", font, 20);
+	singePlayer.create("Single player", font, 4);
 	multiplayer.create("Multiplayer", font, 20);
 	exit.create("Exit", font, 20);
 	again.create("Play again?", font, 20);
