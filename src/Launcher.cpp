@@ -5,12 +5,12 @@
 
 
 Launcher::Launcher(bool *playAgain)
-	:singePlayer("Single player", font, 4),
-	multiplayer("Multiplayer", font, 20),
-	exit("Exit", font, 20),
-	again("Play again?", font, 20),
-	yes("Yes", font, 20),
-	no("No", font, 20)
+	:singePlayer("Single player", font, 40),
+	multiplayer("Multiplayer", font, 40),
+	exit("Exit", font, 40),
+	again("Play again?", font, 40),
+	yes("Yes", font, 40),
+	no("No", font, 40)
 {
 	
 
@@ -78,9 +78,9 @@ char Launcher::menu(){
 
     while (isMenu)
 	{
-		singePlayer.setColor(sf::Color(0x80, 0x80, 0x0));
-		multiplayer.setColor(sf::Color(0x80, 0x80, 0x0));
-		exit.setColor(sf::Color(0x80, 0x80, 0x0));
+		singePlayer.setColor(sf::Color::White);
+		multiplayer.setColor(sf::Color::White);
+		exit.setColor(sf::Color::White);
 		menuNum = 0;
  
 		if (sf::IntRect(100, 160, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
@@ -113,12 +113,12 @@ char Launcher::oneMore(){
 	yes.setPosition(195, 220);
 	no.setPosition(275, 220);
 
-	again.setColor(sf::Color(0x80, 0x80, 0x0));
+	again.setColor(sf::Color::White);
 	
     while (isOneMore)
 	{
-		yes.setColor(sf::Color(0x80, 0x80, 0x0));
-		no.setColor(sf::Color(0x80, 0x80, 0x0));
+		yes.setColor(sf::Color::White);
+		no.setColor(sf::Color::White);
 		menuNum = 0;
  
 		if (sf::IntRect(195, 220, 39, 30).contains(sf::Mouse::getPosition(window))) { yes.setColor(sf::Color::Red); menuNum = 1; }
