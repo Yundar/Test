@@ -47,6 +47,8 @@ void View::drawMap(Board board) {
     m_model->getFirstPlayerPosition(&x1, &y1);  
     m_model->getSecondPlayerPosition(&x2, &y2);
 
+    m_Window.clear(sf::Color::White);
+
     for(int i = 0; i < mapSize; i++){
         for(int j = 0; j < mapSize; j++){
             switch (board.getTile(i,j)) {
@@ -78,6 +80,8 @@ void View::drawMap(Board board) {
 
     player1.setPosition(0, 0);
     player2.setPosition(CELL_SIZE*mapSize + border, 0);
+    m_Window.draw(player1);
+    m_Window.draw(player2);
 
     int walls1, walls2;
     walls1 = m_model->getFirstPlayerWalls();
