@@ -15,7 +15,7 @@ View::View(Game *model): player1("Player 1", font, 40), player2("Player 2", font
                     sf::Style::Close);
 
     m_Window.setPosition(centerWindow);
-    m_Window.clear(sf::Color::Black);
+    m_Window.clear(sf::Color::Red);
 
     boardTexture.loadFromFile("./media/map.png");
     boardTexture.setSmooth(true);
@@ -83,13 +83,13 @@ void View::drawMap(Board board) {
 
     for (int i = 0; i < walls1; i++){
         boardSprite.setTextureRect(sf::IntRect(0, 50, CELL_SIZE*3, CELL_SIZE));
-        boardSprite.setPosition(10, 45 + i*15);
+        boardSprite.setPosition(10, 45 + i*45);
         m_Window.draw(boardSprite);
     }
 
     for (int i = 0; i < walls2; i++){
         boardSprite.setTextureRect(sf::IntRect(0, 50, CELL_SIZE*3, CELL_SIZE));
-        boardSprite.setPosition(CELL_SIZE + border + 10, 45 + i*15);
+        boardSprite.setPosition(CELL_SIZE*mapSize + border + 10, 45 + i*45);
         m_Window.draw(boardSprite);
     }
 }
