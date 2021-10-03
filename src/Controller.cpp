@@ -24,7 +24,7 @@ void Controller::start() {
                         window->close();
                     }
                     if (event.type == sf::Event::MouseButtonPressed){
-                        if (sf::IntRect(x * CELL_SIZE - border, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
+                        if (sf::IntRect(x * CELL_SIZE + border, y * CELL_SIZE, CELL_SIZE, CELL_SIZE).contains(pixelPos.x, pixelPos.y)){
                             m_view->drawPossibleMoves();
                         } else{
                             m_model->makeTurn((pixelPos.x - border)/ CELL_SIZE, pixelPos.y / CELL_SIZE);
