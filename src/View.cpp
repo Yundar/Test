@@ -99,11 +99,11 @@ void View::drawMap(Board board) {
 
     for (int i = 0; i < walls2; i++){
         boardSprite.setTextureRect(sf::IntRect(0, 50, CELL_SIZE*3, CELL_SIZE));
-        boardSprite.setPosition(CELL_SIZE*mapSize + border + 10, 45 + i*45);
+        boardSprite.setPosition(CELL_SIZE*mapSize + border + 5, 45 + i*45);
         m_Window.draw(boardSprite);
-        boardSprite.setPosition(CELL_SIZE*mapSize + border + 10 + CELL_SIZE, 45 + i*45);
+        boardSprite.setPosition(CELL_SIZE*mapSize + border + 5 + CELL_SIZE, 45 + i*45);
         m_Window.draw(boardSprite);
-        boardSprite.setPosition(CELL_SIZE*mapSize + border + 10 + CELL_SIZE*2, 45 + i*45);
+        boardSprite.setPosition(CELL_SIZE*mapSize + border + 5 + CELL_SIZE*2, 45 + i*45);
         m_Window.draw(boardSprite);
     }
 }
