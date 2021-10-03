@@ -4,7 +4,15 @@
 #include <SFML/Window.hpp>
 
 
-Launcher::Launcher(bool *playAgain){
+Launcher::Launcher(bool *playAgain)
+	:singePlayer("Single player", font, 4),
+	multiplayer("Multiplayer", font, 20),
+	exit("Exit", font, 20),
+	again("Play again?", font, 20),
+	yes("Yes", font, 20),
+	no("No", font, 20);
+{
+	
 
 	bool a = playAgain;
 	char answer;
@@ -23,12 +31,7 @@ Launcher::Launcher(bool *playAgain){
 	// again.setTexture(againTexture);
 	// yes.setTexture(yesTexture);
 	// no.setTexture(noTexture);
-	singePlayer.create("Single player", font, 4);
-	multiplayer.create("Multiplayer", font, 20);
-	exit.create("Exit", font, 20);
-	again.create("Play again?", font, 20);
-	yes.create("Yes", font, 20);
-	no.create("No", font, 20);
+
 
     // menu();
 }
