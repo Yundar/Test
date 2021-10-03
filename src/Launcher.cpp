@@ -78,9 +78,9 @@ char Launcher::menu(){
 
     while (isMenu)
 	{
-		singePlayer.setColor(sf::Color::White);
-		multiplayer.setColor(sf::Color::White);
-		exit.setColor(sf::Color::White);
+		singePlayer.setColor(sf::Color::Black);
+		multiplayer.setColor(sf::Color::Black);
+		exit.setColor(sf::Color::Black);
 		menuNum = 0;
  
 		if (sf::IntRect(100, 160, 229, 43).contains(sf::Mouse::getPosition(window))) { singePlayer.setColor(sf::Color::Red); menuNum = 1; }
@@ -113,15 +113,15 @@ char Launcher::oneMore(){
 	yes.setPosition(195, 220);
 	no.setPosition(275, 220);
 
-	again.setColor(sf::Color::White);
+	again.setColor(sf::Color::Black);
 	
     while (isOneMore)
 	{
-		yes.setColor(sf::Color::White);
-		no.setColor(sf::Color::White);
+		yes.setColor(sf::Color::Black);
+		no.setColor(sf::Color::Black);
 		menuNum = 0;
  
-		if (sf::IntRect(195, 220, 39, 30).contains(sf::Mouse::getPosition(window))) { yes.setColor(sf::Color::Red); menuNum = 1; }
+		if (sf::IntRect(195, 220, 50, 30).contains(sf::Mouse::getPosition(window))) { yes.setColor(sf::Color::Red); menuNum = 1; }
 		if (sf::IntRect(275, 220, 50, 30).contains(sf::Mouse::getPosition(window))) { no.setColor(sf::Color::Red); menuNum = 2; }
  
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
