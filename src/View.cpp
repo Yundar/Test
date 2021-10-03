@@ -15,7 +15,7 @@ View::View(Game *model): player1("Player 1", font, 40), player2("Player 2", font
                     sf::Style::Close);
 
     m_Window.setPosition(centerWindow);
-    m_Window.clear(sf::Color::Red);
+    m_Window.clear(sf::Color::White);
 
     boardTexture.loadFromFile("./media/map.png");
     boardTexture.setSmooth(true);
