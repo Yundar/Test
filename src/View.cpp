@@ -26,7 +26,9 @@ View::View(Game *model): player1("Player 1", font, 40), player2("Player 2", font
     player1Sprite.setTexture(playerTexture);
     player2Sprite.setTexture(playerTexture);
 
-    font.loadFromFile("./media/fonts/Colibri.ttf");
+    font.loadFromFile("./media/fonts/Calibri.ttf");
+    player1.setColor(sf::Color::Black);
+    player2.setColor(sf::Color::Black);s
 }
 
 void View::update() {
