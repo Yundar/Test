@@ -25,7 +25,7 @@ void Launcher::mainMenu(){
    	window.clear(backgroundColor);
 
 	// , window.getSize().x, window.getSize().y
-	background.setTextureRect(sf::IntRect(0, 0));
+	background.setTextureRect(sf::IntRect(0, 0, 600, 300));
 	background.setScale(
 		window.getSize().x / background.getLocalBounds().width,
 		window.getSize().y / background.getLocalBounds().height);
