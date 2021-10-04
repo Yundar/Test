@@ -10,7 +10,7 @@ Launcher::Launcher() :
 
 	font.loadFromFile("./media/fonts/Calibri.ttf");
 
-	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot2.jpg");
+	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot.jpg");
 	background.setTexture(backgroundTexture);
 
 	backgroundExitMenuTexture.loadFromFile("./media/showcase/FaceToFaceCloseShot.jpg");
@@ -24,11 +24,11 @@ void Launcher::mainMenu(){
 	
    	window.clear(backgroundColor);
 
-	// 
-	background.setTextureRect(sf::IntRect(0, 0, window.getSize().x, window.getSize().y));
-	// background.setScale(
-	// 	window.getSize().x / background.getLocalBounds().width,
-	// 	window.getSize().y / background.getLocalBounds().height);
+	// window.getSize().x, window.getSize().y
+	background.setTextureRect(sf::IntRect(0, 0, 600, 300));
+	background.setScale(
+		window.getSize().x / background.getLocalBounds().height,
+		window.getSize().y / background.getLocalBounds().height);
 	window.draw(background);
 
 	singePlayerText.setPosition(100, 160);
