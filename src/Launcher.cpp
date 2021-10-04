@@ -10,7 +10,7 @@ Launcher::Launcher() :
 
 	font.loadFromFile("./media/fonts/Calibri.ttf");
 
-	backgroundTexture.loadFromFile("./media/showcase/BoardFromAbove.jpg");
+	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot.jpg");
 	background.setTexture(backgroundTexture);
 }
 
@@ -22,6 +22,7 @@ void Launcher::mainMenu(){
    	window.clear(backgroundColor);
 
 	background.setTextureRect(sf::IntRect(0, 0, window.getSize().x, window.getSize().y));
+	window.draw(background);
 
 	singePlayerText.setPosition(100, 160);
 	multiplayerText.setPosition(100, 220);
