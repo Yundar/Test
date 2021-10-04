@@ -17,6 +17,8 @@ private:
     sf::Text yesText;
     sf::Text noText;
 
+    sf::RectangleShape fadeRect;
+
     sf::Texture backgroundTexture;
     sf::Sprite background;
 
