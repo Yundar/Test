@@ -34,7 +34,7 @@ void Launcher::mainMenu(){
 	
 	alpha++;
 	
-	sf::Color c = fadeRect.getFillColor();
+	sf::Color c = background.getTexture();
 	c.a = alpha;
 	
 	fadeRect.setFillColor(c);
