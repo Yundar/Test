@@ -17,9 +17,9 @@ void Launcher::mainMenu(){
 	window.setPosition(centerWindow);
 	
    	window.clear(backgroundColor);
-
+	   
 	fadeRect.setFillColor(sf::Color::Black);
-	fadeRect.setSize(510, 510); //вместо 1280*720 - свои размеры окна, а еще лучше брать их из window.getSize()
+	fadeRect.setSize(window.getSize().x, window.getSize().y); //вместо 1280*720 - свои размеры окна, а еще лучше брать их из window.getSize()
 	
 	sf::Clock fadeClock;
 	int alpha = 0;
