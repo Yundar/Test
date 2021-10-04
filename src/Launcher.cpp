@@ -10,7 +10,7 @@ Launcher::Launcher() :
 
 	font.loadFromFile("./media/fonts/Calibri.ttf");
 
-	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot.jpg");
+	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot2.jpg");
 	background.setTexture(backgroundTexture);
 
 	backgroundExitMenuTexture.loadFromFile("./media/showcase/FaceToFaceCloseShot.jpg");
