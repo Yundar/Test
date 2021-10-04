@@ -12,6 +12,9 @@ Launcher::Launcher() :
 
 	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot.jpg");
 	background.setTexture(backgroundTexture);
+
+	backgroundExitMenuTexture.loadFromFile("./media/showcase/FaceToFaceCloseShot.jpg");
+	backgroundExitMenu.setTexture(backgroundExitMenuTexture);
 }
 
 void Launcher::mainMenu(){
@@ -87,11 +90,22 @@ bool Launcher::exitMenu(){
 	window.setPosition(centerWindow);
    	window.clear(backgroundColor);
 
+	backgroundExitMenu.setTextureRect(sf::IntRect(0, 0, window.getSize().x, window.getSize().y));
+	window.draw(backgroundExitMenu);
+
 	againText.setPosition(185, 160);
 	yesText.setPosition(195, 220);
 	noText.setPosition(275, 220);
 
 	againText.setFillColor(sf::Color::Black);
+
+	againText.setOutlineColor(sf::Color::White);
+	yesText.setOutlineColor(sf::Color::White);
+	noText.setOutlineColor(sf::Color::White);
+	
+	againText.setOutlineThickness(2);
+	yesText.setOutlineThickness(2);
+	noText.setOutlineThickness(2);
 	
     while (window.isOpen()) {
 		yesText.setFillColor(sf::Color::Black);
