@@ -17,7 +17,26 @@ void Launcher::mainMenu(){
 	window.setPosition(centerWindow);
 	
    	window.clear(backgroundColor);
-
+	sf::RectangleShape fadeRect;
+	fadeRect.setFillColor(sf::Color::Black);
+	fadeRect.setSize(windowSize); //вместо 1280*720 - свои размеры окна, а еще лучше брать их из window.getSize()
+	
+	sf::Clock fadeClock;
+	int alpha = 0;
+	bool isFading = false; //установка этого флага начнет эффект затухания
+	const float FADE_SPEED = 1.0f; //скорость затухания в секундах
+	
+	//rendering
+	if (isFading && alpha < 255 && fadeClock.getElapsedTime().asSeconds() > (FADE_SPEED / 255)) {
+	fadeClock.restart();
+	
+	alpha++;
+	
+	sf::Color c = fadeRect.getFillColor();
+	c.a = alpha;
+	
+	fadeRect.setFillColor(c);
+	}
 	singePlayerText.setPosition(100, 160);
 	multiplayerText.setPosition(100, 220);
 	exitText.setPosition(100, 280);

@@ -17,6 +17,9 @@ private:
     sf::Text yesText;
     sf::Text noText;
 
+    sf::Texture backgroundTexture;
+    sf::Sprite background;
+
     sf::Event event;
 
     // Window specifics
