@@ -28,6 +28,10 @@ void Launcher::mainMenu(){
 	multiplayerText.setPosition(100, 220);
 	exitText.setPosition(100, 280);
 
+	singePlayerText.setOutlineColor(sf::Color::White);
+	multiplayerText.setOutlineColor(sf::Color::White);
+	exitText.setOutlineColor(sf::Color::White);
+
     while (window.isOpen()) {
 		singePlayerText.setFillColor(sf::Color::Black);
 		multiplayerText.setFillColor(sf::Color::Black);
