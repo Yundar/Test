@@ -5,7 +5,7 @@
 #include "View.h"
 #include "Controller.h"
 #include <SFML/Graphics.hpp>
-#include <RectangleShape.hpp>
+#include <SFML/RectangleShape.hpp>
 
 class Launcher{
 private:
