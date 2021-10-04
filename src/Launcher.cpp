@@ -25,11 +25,9 @@ void Launcher::mainMenu(){
 	
    	window.clear(backgroundColor);
 
-	// window.getSize().x, window.getSize().y
-	background.setTextureRect(sf::IntRect(0, 0, 650, 300));
-	background.setScale(1.7f, 1.7f);
-		// window.getSize().x / background.getLocalBounds().width,
-		// window.getSize().y / background.getLocalBounds().height);
+	background.setTextureRect(sf::IntRect(0, 0, 600, 300));
+	background.setScale(1.7f, 1.7f); // Texture height / window height
+
 	window.draw(background);
 
 	singePlayerText.setPosition(100, 160);

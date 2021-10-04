@@ -14,6 +14,7 @@ View::View(Game *model): player1Name("", font, 30), player2Name("", font, 30), c
     // Load textures
     boardTexture.loadFromFile("./media/map.png");
     boardTexture.setSmooth(true);
+    boartTexture.setRepeated(true);
     boardSprite.setTexture(boardTexture);
 
     playerTexture.loadFromFile("./media/players.png");
@@ -96,24 +97,24 @@ void View::drawMap(Board board) {
     wallsFirstPlayer = m_model->getFirstPlayerWalls();
     wallsSecondPlayer = m_model->getSecondPlayerWalls();
 
-    boardSprite.setTextureRect(sf::IntRect(0, 50, tileSize, tileSize));
+    boardSprite.setTextureRect(sf::IntRect(0, 50, tileSize*3, tileSize));
 
     for (int i = 0; i < wallsFirstPlayer; i++){
         boardSprite.setPosition(10, 45 + i*45);
         m_Window.draw(boardSprite);
-        boardSprite.setPosition(10 + tileSize, 45 + i*45);
-        m_Window.draw(boardSprite);
-        boardSprite.setPosition(10 + tileSize*2, 45 + i*45);
-        m_Window.draw(boardSprite);
+        // boardSprite.setPosition(10 + tileSize, 45 + i*45);
+        // m_Wndow.draw(boardSprite);
+        // boardSprite.setPosition(10 + tileSize*2, 45 + i*45);
+        // m_Window.draw(boardSprite);
     }
 
     for (int i = 0; i < wallsSecondPlayer; i++){
         boardSprite.setPosition(tileSize*mapSize + wallsHolderSize + 10, 45 + i*45);
         m_Window.draw(boardSprite);
-        boardSprite.setPosition(tileSize*mapSize + wallsHolderSize + 10 + tileSize, 45 + i*45);
-        m_Window.draw(boardSprite);
-        boardSprite.setPosition(tileSize*mapSize + wallsHolderSize + 10 + tileSize*2, 45 + i*45);
-        m_Window.draw(boardSprite);
+        // boardSprite.setPosition(tileSize*mapSize + wallsHolderSize + 10 + tileSize, 45 + i*45);
+        // m_Window.draw(boardSprite);
+        // boardSprite.setPosition(tileSize*mapSize + wallsHolderSize + 10 + tileSize*2, 45 + i*45);
+        // m_Window.draw(boardSprite);
     }
 }
 
