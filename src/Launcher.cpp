@@ -11,7 +11,7 @@ Launcher::Launcher() :
 	font.loadFromFile("./media/fonts/Calibri.ttf");
 
 	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot.jpg");
-	backgroundTexture.setSmooth();
+	backgroundTexture.setSmooth(true);
 	background.setTexture(backgroundTexture);
 
 	backgroundExitMenuTexture.loadFromFile("./media/showcase/FaceToFaceCloseShot.jpg");
