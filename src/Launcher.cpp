@@ -11,6 +11,7 @@ Launcher::Launcher() :
 	font.loadFromFile("./media/fonts/Calibri.ttf");
 
 	backgroundTexture.loadFromFile("./media/showcase/BlurredCloseShot.jpg");
+	backgroundTexture.setSmooth();
 	background.setTexture(backgroundTexture);
 
 	backgroundExitMenuTexture.loadFromFile("./media/showcase/FaceToFaceCloseShot.jpg");
@@ -26,7 +27,7 @@ void Launcher::mainMenu(){
 
 	// window.getSize().x, window.getSize().y
 	background.setTextureRect(sf::IntRect(0, 0, 650, 300));
-	background.setScale(2, 2);
+	background.setScale(1.7f, 1.7f);
 		// window.getSize().x / background.getLocalBounds().width,
 		// window.getSize().y / background.getLocalBounds().height);
 	window.draw(background);
