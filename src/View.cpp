@@ -14,7 +14,7 @@ View::View(Game *model): player1Name("", font, 30), player2Name("", font, 30), c
     // Load textures
     boardTexture.loadFromFile("./media/map.png");
     boardTexture.setSmooth(true);
-    boartTexture.setRepeated(true);
+    boardTexture.setRepeated(true);
     boardSprite.setTexture(boardTexture);
 
     playerTexture.loadFromFile("./media/players.png");
