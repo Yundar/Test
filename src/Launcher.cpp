@@ -17,9 +17,11 @@ void Launcher::mainMenu(){
 	window.setPosition(centerWindow);
 	
    	window.clear(backgroundColor);
-	   
-	fadeRect.setFillColor(sf::Color::Black);
-	fadeRect.setSize(window.getSize().x, window.getSize().y); //вместо 1280*720 - свои размеры окна, а еще лучше брать их из window.getSize()
+	
+	backgroundTexture.loadFromFile("./media/showcase/BoardFromAbove.jpg");
+	background.setTexture(backgroundTexture);
+	background.setTextureRect(sf::IntRect(0, 0, window.getSize().x, window.getSize().y));
+	//вместо 1280*720 - свои размеры окна, а еще лучше брать их из window.getSize()
 	
 	sf::Clock fadeClock;
 	int alpha = 0;

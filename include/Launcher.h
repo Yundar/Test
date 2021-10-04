@@ -5,7 +5,6 @@
 #include "View.h"
 #include "Controller.h"
 #include <SFML/Graphics.hpp>
-#include <SFML/RectangleShape.hpp>
 
 class Launcher{
 private:
@@ -17,8 +16,6 @@ private:
     sf::Text againText;
     sf::Text yesText;
     sf::Text noText;
-
-    sf::RectangleShape fadeRect;
 
     sf::Texture backgroundTexture;
     sf::Sprite background;
