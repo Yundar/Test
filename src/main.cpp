@@ -16,7 +16,7 @@ int main() {
     std::cin >> answer;
 
     if (answer == "white" || answer == "black"){
-        single("white", "black");
+        single("white", "black", answer);
     }
     
     
@@ -29,11 +29,9 @@ void single(const char* firstName, const char* secondName, std::string answer) {
     Player fp(mapSize/2, mapSize-1, firstName);
     Bot sp(mapSize/2, 0, secondName);
 
-    if (answer == "white"){
-        Game game(fp, sp);
-    } else if (answer == "black"){
+    Game game(fp, sp);
+    if (answer == "black"){
         Game game(sp, fp);
-    }
     
     View view(&game);
     Controller controller(&game);
