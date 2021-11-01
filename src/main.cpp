@@ -15,22 +15,26 @@ int main() {
     std::string answer;
     std::cin >> answer;
 
-    if (answer == "white"){
-        single("white","black");
-    } else if (answer == "black"){
-        single("black","white");
+    if (answer == "white" || answer == "black"){
+        single("white", "black");
     }
+    
     
     
 
     return 0;
 }
 
-void single(const char* firstName, const char* secondName) {
+void single(const char* firstName, const char* secondName, std::string answer) {
     Player fp(mapSize/2, mapSize-1, firstName);
     Bot sp(mapSize/2, 0, secondName);
 
-    Game game(fp, sp);
+    if (answer == "white"){
+        Game game(fp, sp);
+    } else if (answer == "black"){
+        Game game(sp, fp);
+    }
+    
     View view(&game);
     Controller controller(&game);
     controller.start();
