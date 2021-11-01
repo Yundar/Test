@@ -29,8 +29,8 @@ int main() {
 }
 
 void singleBlack(const char* firstName, const char* secondName) {
-    Player fp(mapSize/2, mapSize-1, firstName);
-    Bot sp(mapSize/2, 0, secondName);
+    Player fp(mapSize/2, 0, firstName);
+    Bot sp(mapSize/2, mapSize-1, secondName);
 
     Game game(sp, fp);
     View view(&game);
