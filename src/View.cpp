@@ -45,9 +45,9 @@ void View::drawMap(Board board) {
 
             for (int j = 0; j < mapSize; j++) {
                 if (x1 == j && y1 == i) {
-                    std::cout << 'P' << ' ';
+                    std::cout << 'W' << ' ';
                 } else if (x2 == j && y2 == i) {
-                    std::cout << 'S' << ' ';
+                    std::cout << 'B' << ' ';
                 } else {
                     int c = board.getTile(j, i);
                     if (c == 0) std::cout << ' ';

@@ -15,11 +15,7 @@ int main() {
     std::string answer;
     std::cin >> answer;
 
-    if (answer == "white"){
-        single("Player", "Wally");
-    } else if (answer == "black"){
-        single("Wally", "Player");
-    }
+    single("white","black");
     
 
     return 0;
