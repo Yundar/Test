@@ -37,10 +37,10 @@ void View::drawMap(Board board) {
     std::cout << std::endl;
 
     for (int i = 0; i < mapSize; i++) {
-        if (i < 10)
+        if (i % 2 == 0)
+        std::cout << i + 1 << ' ' << '|' << ' ';
+        else if (i % 2 == 1) 
         std::cout << i << ' ' << '|' << ' ';
-        else if (i >= 10) 
-        std::cout << i << '|' << ' ';
 
             for (int j = 0; j < mapSize; j++) {
                 if (x1 == j && y1 == i) {
