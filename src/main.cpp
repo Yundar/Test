@@ -6,7 +6,7 @@
 #include <cstdlib> // rand(), srand()
 #include <string>
 
-void single(const char* firstName, const char* secondName);
+void single(const char* firstName, const char* secondName, std::string ans);
 
 int main() {
     srand(time(0));
