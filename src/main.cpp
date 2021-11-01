@@ -25,12 +25,12 @@ int main() {
     return 0;
 }
 
-void single(const char* firstName, const char* secondName, std::string answer) {
+void single(const char* firstName, const char* secondName, std::string ans) {
     Player fp(mapSize/2, mapSize-1, firstName);
     Bot sp(mapSize/2, 0, secondName);
 
     Game game(fp, sp);
-    if (answer == "black"){
+    if (ans == "black"){
         Game game(sp, fp);
     }
     View view(&game);
