@@ -32,7 +32,7 @@ void single(const char* firstName, const char* secondName, std::string answer) {
     Game game(fp, sp);
     if (answer == "black"){
         Game game(sp, fp);
-    
+    }
     View view(&game);
     Controller controller(&game);
     controller.start();
