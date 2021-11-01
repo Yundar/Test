@@ -26,10 +26,7 @@ void View::drawMap(Board board) {
 
     std::cout << "    ";
     for (int i = 0; i < mapSize; i++) {
-        if (i < 10)
         std::cout << top[i] << ' ';
-        else if (i >= 10) 
-        std::cout << i-10 << ' ';
     }
     std::cout << std::endl;
     
