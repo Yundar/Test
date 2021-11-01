@@ -17,11 +17,8 @@ void Controller::start() {
                 std::string whatToDo, coordinates;
 
                 std::cin >> whatToDo >> coordinates;
-                if (whatToDo == "stop") break;
 
-                
-
-                else if (whatToDo == "move"){
+                if (whatToDo == "move"){
                     int x, y; 
                 
                     char coordinateInLetter[mapSize] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'};
@@ -56,6 +53,7 @@ void Controller::start() {
 
                     m_model->makeTurn(x, y);
                 }
+                else if (whatToDo == "stop") break;
 
                 
             } else {

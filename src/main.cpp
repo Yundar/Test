@@ -22,9 +22,6 @@ int main() {
         singleBlack("black", "white");
     }
     
-    
-    
-
     return 0;
 }
 

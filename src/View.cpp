@@ -22,10 +22,12 @@ void View::drawMap(Board board) {
     m_model->getFirstPlayerPosition(&x1, &y1);
     m_model->getSecondPlayerPosition(&x2, &y2);
 
+    char top[17] = {'A', 'S', 'B', 'T', 'C', 'U', 'D', 'V', 'E', 'W', 'F', 'X', 'G', 'Y', 'H', 'Z', 'I'};
+
     std::cout << "    ";
     for (int i = 0; i < mapSize; i++) {
         if (i < 10)
-        std::cout << i << ' ';
+        std::cout << top[i] << ' ';
         else if (i >= 10) 
         std::cout << i-10 << ' ';
     }
