@@ -10,13 +10,13 @@ void Launcher::start(){
     std::cin >> answer;
 
     if (answer == "white"){
-        Launcher::singleWhite("white", "black");
+        singleWhite("white", "black");
     } else if (answer == "black"){
-        Launcher::singleBlack("black", "white");
+        singleBlack("black", "white");
     }
 }
 
-void singleBlack(const char* firstName, const char* secondName) {
+void Launcher::singleBlack(const char* firstName, const char* secondName) {
     Player fp(mapSize/2, 0, firstName);
     Bot sp(mapSize/2, mapSize-1, secondName);
 
@@ -26,7 +26,7 @@ void singleBlack(const char* firstName, const char* secondName) {
     controller.start();
 }
 
-void singleWhite(const char* firstName, const char* secondName) {
+void Launcher::singleWhite(const char* firstName, const char* secondName) {
     Player fp(mapSize/2, mapSize-1, firstName);
     Bot sp(mapSize/2, 0, secondName);
 
