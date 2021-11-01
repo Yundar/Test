@@ -65,7 +65,7 @@ void View::drawMap(Board board) {
 
     std::cout << m_model->getCurrentPlayerName() << " Can move as this: ";
     for(auto e : moves) {
-        std::cout << cells[e.first] << ' ' << e.second << ' ';
+        std::cout << cells[e.first/2] << ' ' << e.second << ' ';
         std::cout << '|' << ' ';
     }
 
