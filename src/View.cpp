@@ -23,6 +23,7 @@ void View::drawMap(Board board) {
     m_model->getSecondPlayerPosition(&x2, &y2);
 
     char top[17] = {'A', 'S', 'B', 'T', 'C', 'U', 'D', 'V', 'E', 'W', 'F', 'X', 'G', 'Y', 'H', 'Z', 'I'};
+    char cells[9] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'};
 
     std::cout << "    ";
     for (int i = 0; i < mapSize; i++) {
@@ -63,7 +64,8 @@ void View::drawMap(Board board) {
 
     std::cout << m_model->getCurrentPlayerName() << " Can move as this: ";
     for(auto e : moves) {
-        std::cout << e.first << ' ' << e.second << ' ';
+        int x = cells[e.first];
+        std::cout << x << ' ' << e.second << ' ';
         std::cout << '|' << ' ';
     }
 
