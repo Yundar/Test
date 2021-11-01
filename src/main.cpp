@@ -6,7 +6,8 @@
 #include <cstdlib> // rand(), srand()
 #include <string>
 
-void single(const char* firstName, const char* secondName, std::string ans);
+void singleWhite(const char* firstName, const char* secondName);
+void singleBlack(const char* firstName, const char* secondName);
 
 int main() {
     srand(time(0));
@@ -15,8 +16,10 @@ int main() {
     std::string answer;
     std::cin >> answer;
 
-    if (answer == "white" || answer == "black"){
-        single("white", "black", answer);
+    if (answer == "white"){
+        singleWhite("white", "black");
+    } else if (answer == "black"){
+        singleBlack("black", "white");
     }
     
     
@@ -25,14 +28,21 @@ int main() {
     return 0;
 }
 
-void single(const char* firstName, const char* secondName, std::string ans) {
+void singleBlack(const char* firstName, const char* secondName) {
+    Player fp(mapSize/2, mapSize-1, firstName);
+    Bot sp(mapSize/2, 0, secondName);
+
+    Game game(sp, fp);
+    View view(&game);
+    Controller controller(&game);
+    controller.start();
+}
+
+void singleWhite(const char* firstName, const char* secondName) {
     Player fp(mapSize/2, mapSize-1, firstName);
     Bot sp(mapSize/2, 0, secondName);
 
     Game game(fp, sp);
-    if (ans == "black"){
-        Game game(sp, fp);
-    }
     View view(&game);
     Controller controller(&game);
     controller.start();
