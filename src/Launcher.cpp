@@ -1,14 +1,18 @@
 #include "Launcher.h"
 
+
+Launcher::Launcher(){}
+
+
 void Launcher::start(){
 	std::cout << "What collor you want to play? white/black" << std::endl;
     std::string answer;
     std::cin >> answer;
 
     if (answer == "white"){
-        singleWhite("white", "black");
+        Launcher::singleWhite("white", "black");
     } else if (answer == "black"){
-        singleBlack("black", "white");
+        Launcher::singleBlack("black", "white");
     }
 }
 
