@@ -7,7 +7,7 @@
         "args": [
             "${file}",
                          "-o", // Укажите имя выходного файла, если этот параметр не добавлен, по умолчанию выводится a.exe, по умолчанию a.out под Linux
-            "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "E:\\TTS\\GameDev\\Test/${fileBasenameNoExtension}.exe",
                         "-I", "E:\\TTS\\GameDev\\Test\\include",
                          "-g", // Создание и отладка связанной информации
                          "E:\\TTS\\GameDev\\Test\\src\\Board.cpp",
