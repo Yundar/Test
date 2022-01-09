@@ -23,12 +23,12 @@ void Launcher::mainMenu(){
 	sf::RenderWindow window(windowSize, launcherTitle);
 	window.setPosition(centerWindow);
 	
-   	window.clear(backgroundColor);
+   	
 
 	background.setTextureRect(sf::IntRect(0, 0, 600, 300));
 	background.setScale(1.7f, 1.7f); // Texture height / window height
 
-	window.draw(background);
+	
 
 	singePlayerText.setPosition(100, 160);
 	multiplayerText.setPosition(100, 220);
@@ -43,6 +43,8 @@ void Launcher::mainMenu(){
 	exitText.setOutlineThickness(2);
 
     while (window.isOpen()) {
+        window.clear(backgroundColor);
+        window.draw(background);
 		singePlayerText.setFillColor(sf::Color::Black);
 		multiplayerText.setFillColor(sf::Color::Black);
 		exitText.setFillColor(sf::Color::Black);
@@ -91,10 +93,10 @@ bool Launcher::exitMenu(){
 
 	sf::RenderWindow window(windowSize, launcherTitle);
 	window.setPosition(centerWindow);
-   	window.clear(backgroundColor);
+   	
 
 	backgroundExitMenu.setTextureRect(sf::IntRect(0, 0, window.getSize().x, window.getSize().y));
-	window.draw(backgroundExitMenu);
+	
 
 	againText.setPosition(185, 160);
 	yesText.setPosition(195, 220);
@@ -111,6 +113,8 @@ bool Launcher::exitMenu(){
 	noText.setOutlineThickness(2);
 	
     while (window.isOpen()) {
+        window.clear(backgroundColor);
+        window.draw(backgroundExitMenu);
 		yesText.setFillColor(sf::Color::Black);
 		noText.setFillColor(sf::Color::Black);
  

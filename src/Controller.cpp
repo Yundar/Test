@@ -14,8 +14,6 @@ void Controller::start() {
         try {
             if (m_model->checkGameEnd() == true) break;
             if (m_model->getCurrentPlayerNeedsInput()) {
-                int x, y;
-                m_model->getCurrentPlayerPosition(&x, &y);
 
                 sf::Vector2i pixelPos = sf::Mouse::getPosition(*window);
                 sf::Event event;
@@ -24,19 +22,19 @@ void Controller::start() {
                         window->close();
                     }
                     if (event.type == sf::Event::MouseButtonPressed) {
-                        if (sf::IntRect(x * tileSize + wallsHolderSize, y * tileSize, tileSize, tileSize).contains(pixelPos.x, pixelPos.y)){
+                        if (sf::IntRect(m_model->getCurrentPlayerPosition().x * tileSize + wallsHolderSize, m_model->getCurrentPlayerPosition().y * tileSize, tileSize, tileSize).contains(pixelPos.x, pixelPos.y)){
                             m_view->drawPossibleMoves();
                         } else{
                             m_model->makeTurn((pixelPos.x - wallsHolderSize)/ tileSize, pixelPos.y / tileSize);
                         }
                         for (unsigned int i = 0; i < m_model->getPossibleMoves().size(); i++) {
-                            if (sf::IntRect(m_model->getPossibleMoves()[i].first - wallsHolderSize * tileSize, m_model->getPossibleMoves()[i].second * tileSize, tileSize, tileSize).contains(pixelPos.x, pixelPos.y)){
-                                m_model->makeTurn(m_model->getPossibleMoves()[i].first - wallsHolderSize, m_model->getPossibleMoves()[i].second);
+                            if (sf::IntRect(m_model->getPossibleMoves()[i].x - wallsHolderSize * tileSize, m_model->getPossibleMoves()[i].y * tileSize, tileSize, tileSize).contains(pixelPos.x, pixelPos.y)){
+                                m_model->makeTurn(m_model->getPossibleMoves()[i].x - wallsHolderSize, m_model->getPossibleMoves()[i].y);
                             }
                         }
                     }
                 }
-            } else { m_model->makeTurn(0, 0); }
+            } else { m_model->decideTurn(); }
         } catch (const std::exception& e) {
             std::cerr << e.what() << "\n\n";
         }

@@ -41,10 +41,6 @@ void View::update() {
 }
 
 void View::drawMap(Board board) {
-    int x, y, x1, y1, x2, y2;
-    m_model->getCurrentPlayerPosition(&x, &y);
-    m_model->getFirstPlayerPosition(&x1, &y1);  
-    m_model->getSecondPlayerPosition(&x2, &y2);
 
     m_Window.clear(sf::Color::White);
 
@@ -71,11 +67,11 @@ void View::drawMap(Board board) {
     }
 
     player1Sprite.setTextureRect(sf::IntRect(0, 0, tileSize, tileSize));
-    player1Sprite.setPosition(x1 * tileSize + wallsHolderSize, y1 * tileSize);
+    player1Sprite.setPosition(m_model->getFirstPlayerPosition().x * tileSize + wallsHolderSize, m_model->getFirstPlayerPosition().y * tileSize);
     m_Window.draw(player1Sprite);
 
     player2Sprite.setTextureRect(sf::IntRect(30, 0, tileSize, tileSize));
-    player2Sprite.setPosition(x2 * tileSize + wallsHolderSize, y2 * tileSize);
+    player2Sprite.setPosition(m_model->getSecondPlayerPosition().x * tileSize + wallsHolderSize, m_model->getSecondPlayerPosition().y * tileSize);
     m_Window.draw(player2Sprite);
 
     currentPlayerName.setString(m_model->getCurrentPlayerName());
@@ -121,7 +117,7 @@ void View::drawPossibleMoves(){
     moves = m_model->getPossibleMoves();                    
     for (unsigned int i = 0; i < moves.size(); i++) {
         boardSprite.setTextureRect(sf::IntRect(100, 0, tileSize, tileSize));
-        boardSprite.setPosition(moves[i].first * tileSize + wallsHolderSize, moves[i].second * tileSize);
+        boardSprite.setPosition(moves[i].x * tileSize + wallsHolderSize, moves[i].y * tileSize);
         m_Window.draw(boardSprite);
     }
     m_Window.display();

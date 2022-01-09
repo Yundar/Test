@@ -3,6 +3,7 @@
 
 #include "Game.h"
 #include "Observer.h"
+#include "utility.h"
 #include <SFML/Graphics.hpp>
 
 enum {
@@ -30,7 +31,7 @@ private:
     sf::Text player2Name;
     sf::Text currentPlayerName;
 
-    std::vector<std::pair<int,int>> moves;
+    std::vector<coordinates> moves;
     
     // Window specifics
     const sf::String gameTitle = "Quoridor";
