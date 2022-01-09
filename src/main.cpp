@@ -10,8 +10,10 @@ int main() {
 
     Launcher launcher;
 
-    launcher.start();    
-    
+    do {
+        launcher.mainMenu();
+    } while (launcher.exitMenu());
+
     return 0;
 }
 
